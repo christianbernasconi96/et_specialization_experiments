@@ -1,0 +1,70 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_test.json
+  incremental_train.body_of_water: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_train_body_of_water.json
+  incremental_dev.body_of_water: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_dev_body_of_water.json
+  incremental_train.bridge: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_train_bridge.json
+  incremental_dev.bridge: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_dev_bridge.json
+  incremental_train.cemetery: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_train_cemetery.json
+  incremental_dev.cemetery: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_dev_cemetery.json
+  incremental_train.city: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_train_city.json
+  incremental_dev.city: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_dev_city.json
+  incremental_train.country: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_train_country.json
+  incremental_dev.country: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_dev_country.json
+  incremental_train.county: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_train_county.json
+  incremental_dev.county: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_dev_county.json
+  incremental_train.province: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_train_province.json
+  incremental_dev.province: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_location/incremental_dev_province.json
+  test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
+rw_options:
+  modality: CreateAndSave
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/location/subset_X/instance_Y/
+  types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/location/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.body_of_water:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.body_of_water:
+    batch_size: 5
+  incremental_train.bridge:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.bridge:
+    batch_size: 5
+  incremental_train.cemetery:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.cemetery:
+    batch_size: 5
+  incremental_train.city:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.city:
+    batch_size: 5
+  incremental_train.country:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.country:
+    batch_size: 5
+  incremental_train.county:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.county:
+    batch_size: 5
+  incremental_train.province:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.province:
+    batch_size: 5
+  test:
+    batch_size: 64

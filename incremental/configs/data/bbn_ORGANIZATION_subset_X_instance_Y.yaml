@@ -1,0 +1,63 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_test.json
+  incremental_train.CORPORATION: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_ORGANIZATION/incremental_train_CORPORATION.json
+  incremental_dev.CORPORATION: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_ORGANIZATION/incremental_dev_CORPORATION.json
+  incremental_train.EDUCATIONAL: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_ORGANIZATION/incremental_train_EDUCATIONAL.json
+  incremental_dev.EDUCATIONAL: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_ORGANIZATION/incremental_dev_EDUCATIONAL.json
+  incremental_train.GOVERNMENT: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_ORGANIZATION/incremental_train_GOVERNMENT.json
+  incremental_dev.GOVERNMENT: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_ORGANIZATION/incremental_dev_GOVERNMENT.json
+  incremental_train.MUSEUM: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_ORGANIZATION/incremental_train_MUSEUM.json
+  incremental_dev.MUSEUM: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_ORGANIZATION/incremental_dev_MUSEUM.json
+  incremental_train.POLITICAL: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_ORGANIZATION/incremental_train_POLITICAL.json
+  incremental_dev.POLITICAL: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_ORGANIZATION/incremental_dev_POLITICAL.json
+  incremental_train.RELIGIOUS: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_ORGANIZATION/incremental_train_RELIGIOUS.json
+  incremental_dev.RELIGIOUS: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_ORGANIZATION/incremental_dev_RELIGIOUS.json
+  test: /home/remote_hdd/datasets_for_incremental_training/bbn/test.json
+rw_options:
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/ORGANIZATION/subset_X/instance_Y/
+  types_list_path: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/ORGANIZATION/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.CORPORATION:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.CORPORATION:
+    batch_size: 5
+  incremental_train.EDUCATIONAL:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.EDUCATIONAL:
+    batch_size: 5
+  incremental_train.GOVERNMENT:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.GOVERNMENT:
+    batch_size: 5
+  incremental_train.MUSEUM:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.MUSEUM:
+    batch_size: 5
+  incremental_train.POLITICAL:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.POLITICAL:
+    batch_size: 5
+  incremental_train.RELIGIOUS:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.RELIGIOUS:
+    batch_size: 5
+  test:
+    batch_size: 64

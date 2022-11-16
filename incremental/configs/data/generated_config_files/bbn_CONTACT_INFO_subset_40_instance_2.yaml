@@ -1,0 +1,28 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_test.json
+  incremental_train.url: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_40/instance_2/sons_of_CONTACT_INFO/incremental_train_url.json
+  incremental_dev.url: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_40/instance_2/sons_of_CONTACT_INFO/incremental_dev_url.json
+  test: /home/remote_hdd/datasets_for_incremental_training/bbn/test.json
+rw_options:
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/CONTACT_INFO/subset_40/instance_2/
+  types_list_path: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/CONTACT_INFO/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.url:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.url:
+    batch_size: 5
+  test:
+    batch_size: 64

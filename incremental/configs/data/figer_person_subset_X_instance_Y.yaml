@@ -1,0 +1,119 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_test.json
+  incremental_train.actor: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_actor.json
+  incremental_dev.actor: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_actor.json
+  incremental_train.architect: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_architect.json
+  incremental_dev.architect: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_architect.json
+  incremental_train.artist: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_artist.json
+  incremental_dev.artist: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_artist.json
+  incremental_train.athlete: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_athlete.json
+  incremental_dev.athlete: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_athlete.json
+  incremental_train.author: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_author.json
+  incremental_dev.author: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_author.json
+  incremental_train.coach: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_coach.json
+  incremental_dev.coach: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_coach.json
+  incremental_train.director: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_director.json
+  incremental_dev.director: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_director.json
+  incremental_train.doctor: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_doctor.json
+  incremental_dev.doctor: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_doctor.json
+  incremental_train.engineer: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_engineer.json
+  incremental_dev.engineer: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_engineer.json
+  incremental_train.monarch: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_monarch.json
+  incremental_dev.monarch: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_monarch.json
+  incremental_train.musician: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_musician.json
+  incremental_dev.musician: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_musician.json
+  incremental_train.politician: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_politician.json
+  incremental_dev.politician: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_politician.json
+  incremental_train.religious_leader: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_religious_leader.json
+  incremental_dev.religious_leader: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_religious_leader.json
+  incremental_train.soldier: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_train_soldier.json
+  incremental_dev.soldier: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_person/incremental_dev_soldier.json
+  test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
+rw_options:
+  modality: CreateAndSave
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/person/subset_X/instance_Y/
+  types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/person/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.actor:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.actor:
+    batch_size: 5
+  incremental_train.architect:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.architect:
+    batch_size: 5
+  incremental_train.artist:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.artist:
+    batch_size: 5
+  incremental_train.athlete:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.athlete:
+    batch_size: 5
+  incremental_train.author:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.author:
+    batch_size: 5
+  incremental_train.coach:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.coach:
+    batch_size: 5
+  incremental_train.director:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.director:
+    batch_size: 5
+  incremental_train.doctor:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.doctor:
+    batch_size: 5
+  incremental_train.engineer:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.engineer:
+    batch_size: 5
+  incremental_train.monarch:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.monarch:
+    batch_size: 5
+  incremental_train.musician:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.musician:
+    batch_size: 5
+  incremental_train.politician:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.politician:
+    batch_size: 5
+  incremental_train.religious_leader:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.religious_leader:
+    batch_size: 5
+  incremental_train.soldier:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.soldier:
+    batch_size: 5
+  test:
+    batch_size: 64

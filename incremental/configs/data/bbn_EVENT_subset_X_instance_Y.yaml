@@ -1,0 +1,35 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_test.json
+  incremental_train.HURRICANE: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_EVENT/incremental_train_HURRICANE.json
+  incremental_dev.HURRICANE: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_EVENT/incremental_dev_HURRICANE.json
+  incremental_train.WAR: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_EVENT/incremental_train_WAR.json
+  incremental_dev.WAR: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_EVENT/incremental_dev_WAR.json
+  test: /home/remote_hdd/datasets_for_incremental_training/bbn/test.json
+rw_options:
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/EVENT/subset_X/instance_Y/
+  types_list_path: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/EVENT/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.HURRICANE:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.HURRICANE:
+    batch_size: 5
+  incremental_train.WAR:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.WAR:
+    batch_size: 5
+  test:
+    batch_size: 64

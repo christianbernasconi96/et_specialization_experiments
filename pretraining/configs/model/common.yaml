@@ -1,0 +1,6 @@
+smart_save: True
+inference_params:
+    name: ThresholdOrMaxInference
+    threshold: auto
+    transitive: False
+avoid_sanity_logging: True

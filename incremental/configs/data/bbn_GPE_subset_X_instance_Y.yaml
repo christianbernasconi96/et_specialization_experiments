@@ -1,0 +1,42 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_test.json
+  incremental_train.CITY: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_GPE/incremental_train_CITY.json
+  incremental_dev.CITY: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_GPE/incremental_dev_CITY.json
+  incremental_train.COUNTRY: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_GPE/incremental_train_COUNTRY.json
+  incremental_dev.COUNTRY: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_GPE/incremental_dev_COUNTRY.json
+  incremental_train.STATE_PROVINCE: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_GPE/incremental_train_STATE_PROVINCE.json
+  incremental_dev.STATE_PROVINCE: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_GPE/incremental_dev_STATE_PROVINCE.json
+  test: /home/remote_hdd/datasets_for_incremental_training/bbn/test.json
+rw_options:
+  modality: CreateAndSave
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/GPE/subset_X/instance_Y/
+  types_list_path: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/GPE/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.CITY:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.CITY:
+    batch_size: 5
+  incremental_train.COUNTRY:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.COUNTRY:
+    batch_size: 5
+  incremental_train.STATE_PROVINCE:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.STATE_PROVINCE:
+    batch_size: 5
+  test:
+    batch_size: 64
