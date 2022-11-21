@@ -13,6 +13,7 @@ done
 
 # eventually set modality: Load
 DATA_CONFIG_PATH='incremental/configs/data/bbn_'$FAMILY'_subset_X_instance_Y.yaml'
+sed -i 's/Load/CreateAndSave/g' $DATA_CONFIG_PATH
 sed -i 's/CreateAndSave/'$MODALITY'/g' $DATA_CONFIG_PATH
 # CLASSIFIER
 bash incremental/scripts/bbn/run_all_classifier.sh -f $FAMILY

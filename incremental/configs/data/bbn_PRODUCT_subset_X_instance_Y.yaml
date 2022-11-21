@@ -8,7 +8,7 @@ dataset_paths:
   incremental_dev.WEAPON: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_X/instance_Y/sons_of_PRODUCT/incremental_dev_WEAPON.json
   test: /home/remote_hdd/datasets_for_incremental_training/bbn/test.json
 rw_options:
-  modality: CreateAndSave
+  modality: Load
   light: true
   dirpath: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/PRODUCT/subset_X/instance_Y/
   types_list_path: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/PRODUCT/types_list.txt

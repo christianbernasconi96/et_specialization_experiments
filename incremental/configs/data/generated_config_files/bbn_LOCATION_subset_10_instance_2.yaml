@@ -1,0 +1,42 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_test.json
+  incremental_train.CONTINENT: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_10/instance_2/sons_of_LOCATION/incremental_train_CONTINENT.json
+  incremental_dev.CONTINENT: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_10/instance_2/sons_of_LOCATION/incremental_dev_CONTINENT.json
+  incremental_train.REGION: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_10/instance_2/sons_of_LOCATION/incremental_train_REGION.json
+  incremental_dev.REGION: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_10/instance_2/sons_of_LOCATION/incremental_dev_REGION.json
+  incremental_train.RIVER: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_10/instance_2/sons_of_LOCATION/incremental_train_RIVER.json
+  incremental_dev.RIVER: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_10/instance_2/sons_of_LOCATION/incremental_dev_RIVER.json
+  test: /home/remote_hdd/datasets_for_incremental_training/bbn/test.json
+rw_options:
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/LOCATION/subset_10/instance_2/
+  types_list_path: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/LOCATION/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.CONTINENT:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.CONTINENT:
+    batch_size: 5
+  incremental_train.REGION:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.REGION:
+    batch_size: 5
+  incremental_train.RIVER:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.RIVER:
+    batch_size: 5
+  test:
+    batch_size: 64

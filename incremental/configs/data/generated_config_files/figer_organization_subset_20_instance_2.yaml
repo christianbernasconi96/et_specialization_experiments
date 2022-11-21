@@ -2,89 +2,69 @@ dataset_paths:
   pretraining_train: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_train_nodev.json
   pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_dev.json
   pretraining_test: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_test.json
-  
   incremental_train.airline: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_train_airline.json
   incremental_dev.airline: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_dev_airline.json
-  
   incremental_train.company: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_train_company.json
   incremental_dev.company: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_dev_company.json
-  
   incremental_train.educational_institution: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_train_educational_institution.json
   incremental_dev.educational_institution: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_dev_educational_institution.json
-
   incremental_train.fraternity_sorority: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_train_fraternity_sorority.json
   incremental_dev.fraternity_sorority: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_dev_fraternity_sorority.json
-
   incremental_train.sports_league: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_train_sports_league.json
   incremental_dev.sports_league: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_dev_sports_league.json
-
   incremental_train.sports_team: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_train_sports_team.json
   incremental_dev.sports_team: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_dev_sports_team.json
-
   incremental_train.terrorist_organization: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_train_terrorist_organization.json
   incremental_dev.terrorist_organization: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_2/sons_of_organization/incremental_dev_terrorist_organization.json
-
   test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
-
-# tokenizer_params: # inherited from data_pretrain.yaml
 rw_options:
-  modality: Load # in [Create, CreateAndSave, Load]
-  # dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/organization/subset_20/instance_2/
-  dirpath: /home/cbernasconi/figer/specialization/incremental/organization/subset_20/instance_2/
-  light: True
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/organization/subset_20/instance_2/
   types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/organization/types_list.txt
-
 dataloader_params:
-    name: torch.DataLoader
-    pretraining_train:
-      batch_size: 5
-      shuffle: True
-    pretraining_dev:
-      batch_size: 64
-    pretraining_test:
-      batch_size: 64
-    
-    incremental_train.airline:
-      batch_size: 5
-      shuffle: True
-    incremental_dev.airline:
-      batch_size: 5
-    
-    incremental_train.company:
-      batch_size: 5
-      shuffle: True
-    incremental_dev.company:
-      batch_size: 5
-
-    incremental_train.educational_institution:
-      batch_size: 5
-      shuffle: True
-    incremental_dev.educational_institution:
-      batch_size: 5
-
-    incremental_train.fraternity_sorority:
-      batch_size: 5
-      shuffle: True
-    incremental_dev.fraternity_sorority:
-      batch_size: 5
-
-    incremental_train.sports_league:
-      batch_size: 5
-      shuffle: True
-    incremental_dev.sports_league:
-      batch_size: 5
-
-    incremental_train.sports_team:
-      batch_size: 5
-      shuffle: True
-    incremental_dev.sports_team:
-      batch_size: 5
-
-    incremental_train.terrorist_organization:
-      batch_size: 5
-      shuffle: True
-    incremental_dev.terrorist_organization:
-      batch_size: 5
-
-    test:
-      batch_size: 64
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.airline:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.airline:
+    batch_size: 5
+  incremental_train.company:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.company:
+    batch_size: 5
+  incremental_train.educational_institution:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.educational_institution:
+    batch_size: 5
+  incremental_train.fraternity_sorority:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.fraternity_sorority:
+    batch_size: 5
+  incremental_train.sports_league:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.sports_league:
+    batch_size: 5
+  incremental_train.sports_team:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.sports_team:
+    batch_size: 5
+  incremental_train.terrorist_organization:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.terrorist_organization:
+    batch_size: 5
+  test:
+    batch_size: 64

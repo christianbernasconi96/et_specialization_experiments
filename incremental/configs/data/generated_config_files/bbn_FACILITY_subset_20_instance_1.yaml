@@ -1,0 +1,49 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_test.json
+  incremental_train.AIRPORT: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_20/instance_1/sons_of_FACILITY/incremental_train_AIRPORT.json
+  incremental_dev.AIRPORT: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_20/instance_1/sons_of_FACILITY/incremental_dev_AIRPORT.json
+  incremental_train.ATTRACTION: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_20/instance_1/sons_of_FACILITY/incremental_train_ATTRACTION.json
+  incremental_dev.ATTRACTION: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_20/instance_1/sons_of_FACILITY/incremental_dev_ATTRACTION.json
+  incremental_train.BUILDING: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_20/instance_1/sons_of_FACILITY/incremental_train_BUILDING.json
+  incremental_dev.BUILDING: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_20/instance_1/sons_of_FACILITY/incremental_dev_BUILDING.json
+  incremental_train.HIGHWAY_STREET: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_20/instance_1/sons_of_FACILITY/incremental_train_HIGHWAY_STREET.json
+  incremental_dev.HIGHWAY_STREET: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_20/instance_1/sons_of_FACILITY/incremental_dev_HIGHWAY_STREET.json
+  test: /home/remote_hdd/datasets_for_incremental_training/bbn/test.json
+rw_options:
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/FACILITY/subset_20/instance_1/
+  types_list_path: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/FACILITY/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.AIRPORT:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.AIRPORT:
+    batch_size: 5
+  incremental_train.ATTRACTION:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.ATTRACTION:
+    batch_size: 5
+  incremental_train.BUILDING:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.BUILDING:
+    batch_size: 5
+  incremental_train.HIGHWAY_STREET:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.HIGHWAY_STREET:
+    batch_size: 5
+  test:
+    batch_size: 64
