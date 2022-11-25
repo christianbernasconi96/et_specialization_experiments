@@ -4,7 +4,7 @@ CMD='python'
 SEED=0
 while getopts "ds:i:k:D:f:" opt; do
   case $opt in
-    d) CMD='debugpy-run -p :5680'
+    d) CMD='debugpy-run -p :5681'
     ;;
     s) SEED=$OPTARG
     ;;

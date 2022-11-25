@@ -2,7 +2,7 @@ from entity_typing_framework.dataset_classes.dataset_managers import Incremental
 from entity_typing_framework.main_module.custom_logger import CustomLogger
 from entity_typing_framework.main_module.main_module import IncrementalMainModule
 from pytorch_lightning.utilities.cli import LightningCLI
-import trainer_utils
+from entity_typing_framework.utils.trainer import trainer_utils
 
 def dummy_compute_fn(arg):
     return arg
@@ -22,7 +22,7 @@ cli = MyLightningCLI(IncrementalMainModule, IncrementalDatasetManagerWithTestLog
 cli.trainer.model.ET_Network = cli.trainer.model.load_ET_Network_for_test(checkpoint_to_load=cli.trainer.checkpoint_callback.best_model_path, ET_Network_params = cli.trainer.model.ET_Network_params)
 
 # calibrate threshold
-trainer_utils.calibrate_threshold(cli.trainer, 0.025, 'incremental_only/macro_types/f1')
+trainer_utils.calibrate_threshold(cli.trainer, 0.01, 'incremental_only/macro_types/f1', incremental=True)
 
 # test step
 cli.trainer.test(cli.trainer.model, cli.trainer.datamodule.test_dataloader())

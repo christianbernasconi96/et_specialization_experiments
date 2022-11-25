@@ -2,7 +2,7 @@
 import os
 
 # set main directories
-DATA = 'bbn'
+DATA = 'figer'
 SCENARIO = 'complete' # ['complete', 'single_child']
 TRAIN_DATA = 'train.json'
 DEV_DATA = 'dev.json'
