@@ -1,0 +1,35 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/bbn/complete/pretraining_test.json
+  incremental_train.BOOK: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_10/instance_1/sons_of_WORK_OF_ART/incremental_train_BOOK.json
+  incremental_dev.BOOK: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_10/instance_1/sons_of_WORK_OF_ART/incremental_dev_BOOK.json
+  incremental_train.SONG: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_10/instance_1/sons_of_WORK_OF_ART/incremental_train_SONG.json
+  incremental_dev.SONG: /home/remote_hdd/datasets_for_incremental_training/bbn/complete_subset_10/instance_1/sons_of_WORK_OF_ART/incremental_dev_SONG.json
+  test: /home/remote_hdd/datasets_for_incremental_training/bbn/test.json
+rw_options:
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/WORK_OF_ART/subset_10/instance_1/
+  types_list_path: /home/remote_hdd/tokenized_datasets/bbn/specialization/incremental/WORK_OF_ART/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.BOOK:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.BOOK:
+    batch_size: 5
+  incremental_train.SONG:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.SONG:
+    batch_size: 5
+  test:
+    batch_size: 64

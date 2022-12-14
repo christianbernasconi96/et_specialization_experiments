@@ -1,5 +1,8 @@
 # %% imports and paths
 import os
+import json
+from tqdm import tqdm
+import entity_typing_framework.EntityTypingNetwork_classes.KENN_networks.kenn_utils as kenn_utils
 
 # set main directories
 DATA = 'figer'
@@ -10,9 +13,49 @@ SUBSET = 40
 INSTANCE = 0
 INCREMENTAL_DATA_DIR = f'/home/remote_hdd/datasets_for_incremental_training/{DATA}/{SCENARIO}_subset_{SUBSET}/instance_{INSTANCE}'
 PRETRAINING_TYPES_PATH = f'/home/remote_hdd/tokenized_datasets/{DATA}/specialization/pretraining/types_list.txt'
-DST_TYPES_DIR = f'/home/remote_hdd/tokenized_datasets/{DATA}/specialization/incremental/'
-DST_TYPES_DIR = DST_TYPES_DIR + '{}'
+DST_TYPES_DIR = f'/home/remote_hdd/tokenized_datasets/{DATA}/specialization/incremental'
+DST_TYPES_DIR = DST_TYPES_DIR + '/{}'
 DST_YAML_DIR = f'/home/cbernasconi/et/experiments/specialization/incremental/configs/data'
+DST_KB_DIR = f'/home/cbernasconi/et/experiments/specialization/kenn_tmp/{DATA}'
+DST_KB_DIR = DST_KB_DIR + '/{}'
+ORIGINAL_DATA_DIR = f'/home/remote_hdd/datasets/{DATA}/'
+INCREMENTAL_TYPES_LIST_PATH = f'/home/remote_hdd/tokenized_datasets/{DATA}/specialization/incremental'
+INCREMENTAL_TYPES_LIST_PATH = INCREMENTAL_TYPES_LIST_PATH + '/{}/types_list.txt'
+KB_MODE = ['bottom_up', 'top_down', 'hybrid']
+FAMILY = {
+  'bbn' : [
+    'CONTACT_INFO',
+          'EVENT',
+          'FACILITY',
+          'GPE',
+          'LOCATION',
+          'ORGANIZATION',
+          'PRODUCT',
+          'SUBSTANCE',
+          'WORK_OF_ART'],
+  'figer' : ['art',
+            'broadcast',
+            'building',
+            'computer',
+            'education',
+            'event',
+            'finance',
+            'geography',
+            'government',
+            'internet',
+            'living_thing',
+            'location',
+            'medicine',
+            'metropolitan_transit',
+            'organization',
+            'people',
+            'person',
+            'product',
+            'rail',
+            'religion',
+            'transportation',
+            'visual_art']
+}
 # %%
 ####### CREATE types_list.txt #########
 # read pretraining types from file
@@ -105,3 +148,95 @@ for family, childs in father_childs.items():
     with open(dst_yaml_path, 'w') as out:
       yaml.dump(family_yaml, out, sort_keys=False)
 # %%
+######### CREATE horizontal kbs ###########
+# read types from data
+with open(os.path.join(ORIGINAL_DATA_DIR, 'train.json'), 'r') as inp:
+    dataset_types = [json.loads(l)['y_str'] for l in tqdm(inp.readlines())]
+# read types from ontology
+with open(os.path.join(ORIGINAL_DATA_DIR, 'all_types.txt'), 'r') as inp:
+    types = [l.replace('\n', '') for l in inp.readlines()] 
+
+types.sort()
+type2id = {t:i for i, t in enumerate(types)}
+# %%
+# count cooccurencies
+cooccurrence_counter = {t1: { t2: 0 for t2 in types } for t1 in types}
+for dataset_type in tqdm(dataset_types):
+    for t1 in dataset_type:
+        for t2 in dataset_type:
+            cooccurrence_counter[t1][t2] += 1
+
+
+# keep track of non-cooccurent pairs
+tupled_pairs = []
+for t1 in cooccurrence_counter:
+    for t2, c in cooccurrence_counter[t1].items():
+        if c == 0:
+            t1t2 = [t1, t2]
+            t1t2.sort()
+            if t1t2 not in tupled_pairs:
+                tupled_pairs.append((t1t2))
+tupled_pairs
+
+# %%
+for family in FAMILY[DATA]:
+  # filter pairs by family
+  type_to_filter = f'/{family}'
+  filtered_pairs = [p for p in tupled_pairs if type_to_filter in p[0] or type_to_filter in p[1]]
+  filtered_pairs
+
+  # get trasversal pairs
+  trasversal_pairs = []
+
+  for t1, t2 in filtered_pairs:
+      if type_to_filter in t1:
+          father_t = '/' + t2.split('/')[1]
+          trasversal_pair = [father_t, t1]
+      elif type_to_filter in t2:
+          father_t = '/' + t1.split('/')[1]
+          trasversal_pair = [father_t, t2]
+      
+      if trasversal_pair not in trasversal_pairs:
+          trasversal_pairs.append(trasversal_pair)
+
+  # keep pairs involving only subtypes of the family (discard subtypes from other families)
+  incremental_types_list_path = INCREMENTAL_TYPES_LIST_PATH.format(family)
+  types_to_keep = open(incremental_types_list_path).read().splitlines()
+
+  pairs = []
+
+  for t1, t2 in trasversal_pairs:
+      if t1 in types_to_keep and t2 in types_to_keep:
+          t1t2 = [t1, t2]    
+          t1t2.sort()        
+          pair = f'_:nP{t1t2[0]},nP{t1t2[1]}'
+
+          if pair not in pairs:
+              pairs.append(pair)
+
+  # create horizontal KB
+  predicates = ','.join([f'P{t}' for t in types_to_keep])
+  horizontal_clauses = '\n'.join(pairs)
+  horizontal_kb = predicates + '\n\n' + horizontal_clauses + '\n'
+  # save KB
+  filename = f'horizontal.txt'
+  dst_kb_dir = DST_KB_DIR.format(family)
+  os.makedirs(dst_kb_dir, exist_ok=True)
+  with open(os.path.join(dst_kb_dir, filename), 'w') as out:
+      out.write(horizontal_kb)
+
+  # create horizontal_vertical KB
+  family_types = [t for t in types_to_keep if t.startswith(type_to_filter)]
+  tree = kenn_utils.create_tree(family_types, label2pred = True)
+  for kb_mode in KB_MODE:
+    method = f"kenn_utils.generate_{kb_mode}"
+    vertical_clauses = eval(method)(tree, '_')
+    clauses = horizontal_clauses + '\n' + vertical_clauses
+    kb = predicates + '\n\n' + clauses
+    # save KB
+    filename = f'horizontal_{kb_mode}.txt'
+    dst_kb_dir = DST_KB_DIR.format(family)
+    with open(os.path.join(dst_kb_dir, filename), 'w') as out:
+        out.write(kb)
+# %%
+

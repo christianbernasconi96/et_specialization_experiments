@@ -1,0 +1,35 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_test.json
+  incremental_train.department: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_1/sons_of_education/incremental_train_department.json
+  incremental_dev.department: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_1/sons_of_education/incremental_dev_department.json
+  incremental_train.educational_degree: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_1/sons_of_education/incremental_train_educational_degree.json
+  incremental_dev.educational_degree: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_1/sons_of_education/incremental_dev_educational_degree.json
+  test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
+rw_options:
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/education/subset_20/instance_1/
+  types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/education/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.department:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.department:
+    batch_size: 5
+  incremental_train.educational_degree:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.educational_degree:
+    batch_size: 5
+  test:
+    batch_size: 64

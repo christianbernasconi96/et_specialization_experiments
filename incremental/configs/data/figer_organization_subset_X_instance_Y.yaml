@@ -18,7 +18,7 @@ dataset_paths:
   incremental_dev.terrorist_organization: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_X/instance_Y/sons_of_organization/incremental_dev_terrorist_organization.json
   test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
 rw_options:
-  modality: CreateAndSave
+  modality: Load
   light: true
   dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/organization/subset_X/instance_Y/
   types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/organization/types_list.txt

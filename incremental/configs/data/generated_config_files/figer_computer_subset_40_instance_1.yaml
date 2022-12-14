@@ -1,0 +1,35 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_test.json
+  incremental_train.algorithm: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_computer/incremental_train_algorithm.json
+  incremental_dev.algorithm: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_computer/incremental_dev_algorithm.json
+  incremental_train.programming_language: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_computer/incremental_train_programming_language.json
+  incremental_dev.programming_language: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_computer/incremental_dev_programming_language.json
+  test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
+rw_options:
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/computer/subset_40/instance_1/
+  types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/computer/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.algorithm:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.algorithm:
+    batch_size: 5
+  incremental_train.programming_language:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.programming_language:
+    batch_size: 5
+  test:
+    batch_size: 64

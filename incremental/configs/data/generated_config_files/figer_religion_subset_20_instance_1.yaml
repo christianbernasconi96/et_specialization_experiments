@@ -1,0 +1,28 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_test.json
+  incremental_train.religion: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_1/sons_of_religion/incremental_train_religion.json
+  incremental_dev.religion: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_1/sons_of_religion/incremental_dev_religion.json
+  test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
+rw_options:
+  modality: CreateAndSave
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/religion/subset_20/instance_1/
+  types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/religion/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.religion:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.religion:
+    batch_size: 5
+  test:
+    batch_size: 64

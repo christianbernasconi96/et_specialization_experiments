@@ -1,0 +1,91 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_test.json
+  incremental_train.airplane: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_train_airplane.json
+  incremental_dev.airplane: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_dev_airplane.json
+  incremental_train.camera: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_train_camera.json
+  incremental_dev.camera: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_dev_camera.json
+  incremental_train.car: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_train_car.json
+  incremental_dev.car: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_dev_car.json
+  incremental_train.computer: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_train_computer.json
+  incremental_dev.computer: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_dev_computer.json
+  incremental_train.engine_device: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_train_engine_device.json
+  incremental_dev.engine_device: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_dev_engine_device.json
+  incremental_train.instrument: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_train_instrument.json
+  incremental_dev.instrument: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_dev_instrument.json
+  incremental_train.mobile_phone: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_train_mobile_phone.json
+  incremental_dev.mobile_phone: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_dev_mobile_phone.json
+  incremental_train.ship: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_train_ship.json
+  incremental_dev.ship: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_dev_ship.json
+  incremental_train.spacecraft: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_train_spacecraft.json
+  incremental_dev.spacecraft: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_dev_spacecraft.json
+  incremental_train.weapon: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_train_weapon.json
+  incremental_dev.weapon: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_1/sons_of_product/incremental_dev_weapon.json
+  test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
+rw_options:
+  modality: CreateAndSave
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/product/subset_40/instance_1/
+  types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/product/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.airplane:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.airplane:
+    batch_size: 5
+  incremental_train.camera:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.camera:
+    batch_size: 5
+  incremental_train.car:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.car:
+    batch_size: 5
+  incremental_train.computer:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.computer:
+    batch_size: 5
+  incremental_train.engine_device:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.engine_device:
+    batch_size: 5
+  incremental_train.instrument:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.instrument:
+    batch_size: 5
+  incremental_train.mobile_phone:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.mobile_phone:
+    batch_size: 5
+  incremental_train.ship:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.ship:
+    batch_size: 5
+  incremental_train.spacecraft:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.spacecraft:
+    batch_size: 5
+  incremental_train.weapon:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.weapon:
+    batch_size: 5
+  test:
+    batch_size: 64

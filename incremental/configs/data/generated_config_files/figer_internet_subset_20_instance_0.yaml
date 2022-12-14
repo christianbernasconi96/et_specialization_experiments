@@ -1,0 +1,28 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/figer/complete/pretraining_test.json
+  incremental_train.website: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_0/sons_of_internet/incremental_train_website.json
+  incremental_dev.website: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_0/sons_of_internet/incremental_dev_website.json
+  test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
+rw_options:
+  modality: CreateAndSave
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/internet/subset_20/instance_0/
+  types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/internet/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.website:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.website:
+    batch_size: 5
+  test:
+    batch_size: 64
