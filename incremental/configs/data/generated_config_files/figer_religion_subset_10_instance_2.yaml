@@ -6,7 +6,7 @@ dataset_paths:
   incremental_dev.religion: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_10/instance_2/sons_of_religion/incremental_dev_religion.json
   test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
 rw_options:
-  modality: CreateAndSave
+  modality: Load
   light: true
   dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/religion/subset_10/instance_2/
   types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/religion/types_list.txt

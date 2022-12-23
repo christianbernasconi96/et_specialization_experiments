@@ -5,11 +5,11 @@ from tqdm import tqdm
 import entity_typing_framework.EntityTypingNetwork_classes.KENN_networks.kenn_utils as kenn_utils
 
 # set main directories
-DATA = 'figer'
+DATA = 'ontonotes_shimaoka'
 SCENARIO = 'complete' # ['complete', 'single_child']
 TRAIN_DATA = 'train.json'
 DEV_DATA = 'dev.json'
-SUBSET = 40
+SUBSET = 10
 INSTANCE = 0
 INCREMENTAL_DATA_DIR = f'/home/remote_hdd/datasets_for_incremental_training/{DATA}/{SCENARIO}_subset_{SUBSET}/instance_{INSTANCE}'
 PRETRAINING_TYPES_PATH = f'/home/remote_hdd/tokenized_datasets/{DATA}/specialization/pretraining/types_list.txt'
@@ -54,7 +54,20 @@ FAMILY = {
             'rail',
             'religion',
             'transportation',
-            'visual_art']
+            'visual_art'],
+  'ontonotes_shimaoka': [
+    'location/geography',
+    'location/structure',
+    'location/transit',
+    'organization/company',
+    'other/art',
+    'other/event',
+    'other/health',
+    'other/language',
+    'other/living_thing',
+    'other/product',
+    'person/artist'
+  ]
 }
 # %%
 ####### CREATE types_list.txt #########
@@ -65,7 +78,10 @@ types_pretraining
 # extract incremental types from filesystem
 father_childs = {}
 for dirname in os.listdir(INCREMENTAL_DATA_DIR):
+  # TODO: check the next two lines...
   father = f"/{dirname.replace('sons_of_', '')}"
+  if DATA == 'ontonotes_shimaoka':
+    father = father.split('_')[0] + '/' + '_'.join(father.split('_')[1:])
   childs = []
   for filename in os.listdir(os.path.join(INCREMENTAL_DATA_DIR, dirname)):
     if 'train' in filename:
@@ -81,7 +97,7 @@ father_childs
 for father, childs in father_childs.items():
   if childs:
     types_family = types_pretraining + childs
-    dst_types_dir = DST_TYPES_DIR.format(father[1:])
+    dst_types_dir = DST_TYPES_DIR.format(father[1:].replace('/', '_'))
     os.makedirs(dst_types_dir, exist_ok=True)
     dst_types_path = os.path.join(dst_types_dir, 'types_list.txt')
     with open(dst_types_path, 'w') as out:
@@ -119,7 +135,7 @@ base_yaml = {
 
 for family, childs in father_childs.items():
   if childs:
-    family_suffix = family.split('/')[-1]
+    family_suffix = family[1:].replace('/', '_')
     # shared options
     family_yaml = deepcopy(base_yaml)
     family_yaml['rw_options']['dirpath'] = f'/home/remote_hdd/tokenized_datasets/{DATA}/specialization/incremental/{family_suffix}/subset_X/instance_Y/'
@@ -190,29 +206,31 @@ for family in FAMILY[DATA]:
 
   for t1, t2 in filtered_pairs:
       if type_to_filter in t1:
-          father_t = '/' + t2.split('/')[1]
+          father_t = '/'.join(t2.split('/')[:-1])
           trasversal_pair = [father_t, t1]
       elif type_to_filter in t2:
-          father_t = '/' + t1.split('/')[1]
+          father_t = '/'.join(t1.split('/')[:-1])
           trasversal_pair = [father_t, t2]
       
       if trasversal_pair not in trasversal_pairs:
           trasversal_pairs.append(trasversal_pair)
 
   # keep pairs involving only subtypes of the family (discard subtypes from other families)
-  incremental_types_list_path = INCREMENTAL_TYPES_LIST_PATH.format(family)
+  incremental_types_list_path = INCREMENTAL_TYPES_LIST_PATH.format(family.replace('/', '_'))
   types_to_keep = open(incremental_types_list_path).read().splitlines()
 
   pairs = []
 
   for t1, t2 in trasversal_pairs:
       if t1 in types_to_keep and t2 in types_to_keep:
-          t1t2 = [t1, t2]    
-          t1t2.sort()        
-          pair = f'_:nP{t1t2[0]},nP{t1t2[1]}'
+          # if not (t1 == type_to_filter and type_to_filter in t2 or t2 == type_to_filter and type_to_filter in t1):
+          if (not (t1 == type_to_filter and type_to_filter in t2 or t2 == type_to_filter and type_to_filter in t1)) or (t1 != type_to_filter and t2 != type_to_filter and type_to_filter in t1 and type_to_filter in t2):
+              t1t2 = [t1, t2]    
+              t1t2.sort()        
+              pair = f'_:nP{t1t2[0]},nP{t1t2[1]}'
 
-          if pair not in pairs:
-              pairs.append(pair)
+              if pair not in pairs:
+                  pairs.append(pair)
 
   # create horizontal KB
   predicates = ','.join([f'P{t}' for t in types_to_keep])

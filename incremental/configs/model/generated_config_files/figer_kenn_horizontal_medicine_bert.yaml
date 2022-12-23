@@ -1,0 +1,33 @@
+checkpoint_to_load : TBD # provided in sh
+ET_Network_params:
+  name : IncrementalEntityTypingNetwork
+  network_params:
+    encoder_params:
+      name : AdapterBERTEncoder
+      bertlike_model_name: bert-large-cased
+      adapter_arch : Pfeiffer
+      reduction_factor : 16
+    type_encoder_params:
+      name : OneHotTypeEncoder
+      trainable: False
+    input_projector_params:
+      name : KENNClassifierForIncrementalTraining
+      learnable_clause_weight: True
+      clause_weight: 2.0
+      kb_mode: None
+      clause_file_path: /home/cbernasconi/et/experiments/specialization/kenn_tmp/figer/medicine/horizontal.txt
+      layers_parameters: 
+        '0':
+          in_features : encoder_dim
+          out_features: in_features
+          use_dropout: False
+          activation: relu
+        '1':
+          in_features: previous_out_features
+          out_features : type_number
+          use_dropout: False
+          activation: none
+inference_params: 
+  name: IncrementalDoubleThresholdOrMaxInference
+  threshold_pretraining: 0.375
+  threshold_incremental: auto

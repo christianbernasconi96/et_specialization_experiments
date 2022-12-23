@@ -6,7 +6,7 @@ dataset_paths:
   incremental_dev.website: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_0/sons_of_internet/incremental_dev_website.json
   test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
 rw_options:
-  modality: CreateAndSave
+  modality: Load
   light: true
   dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/internet/subset_40/instance_0/
   types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/internet/types_list.txt

@@ -25,7 +25,7 @@ sed -i 's/: CreateAndSave/: Load/g' $DATA_CONFIG_PATH
 
 for e in 'bottom_up' 'top_down' 'hybrid'
 do
-  bash incremental/scripts/generic/train_kenn_adapter_bert_ms.sh -s 0 -i 2 -k 40 -e $e -D $DATA -f $FAMILY
+  bash incremental/scripts/generic/train_kenn_adapter_bert_ms.sh -s 0 -i 2 -k 20 -e $e -D bbn -f GPE
 done
 
 

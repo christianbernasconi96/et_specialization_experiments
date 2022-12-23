@@ -1,0 +1,49 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_test.json
+  incremental_train.car: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_product/incremental_train_car.json
+  incremental_dev.car: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_product/incremental_dev_car.json
+  incremental_train.computer: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_product/incremental_train_computer.json
+  incremental_dev.computer: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_product/incremental_dev_computer.json
+  incremental_train.software: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_product/incremental_train_software.json
+  incremental_dev.software: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_product/incremental_dev_software.json
+  incremental_train.weapon: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_product/incremental_train_weapon.json
+  incremental_dev.weapon: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_product/incremental_dev_weapon.json
+  test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/test.json
+rw_options:
+  modality: CreateAndSave
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/other_product/subset_X/instance_Y/
+  types_list_path: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/other_product/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.car:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.car:
+    batch_size: 5
+  incremental_train.computer:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.computer:
+    batch_size: 5
+  incremental_train.software:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.software:
+    batch_size: 5
+  incremental_train.weapon:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.weapon:
+    batch_size: 5
+  test:
+    batch_size: 64

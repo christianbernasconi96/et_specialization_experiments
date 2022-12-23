@@ -1,0 +1,35 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_test.json
+  incremental_train.broadcast: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_organization_company/incremental_train_broadcast.json
+  incremental_dev.broadcast: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_organization_company/incremental_dev_broadcast.json
+  incremental_train.news: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_organization_company/incremental_train_news.json
+  incremental_dev.news: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_organization_company/incremental_dev_news.json
+  test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/test.json
+rw_options:
+  modality: CreateAndSave
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/organization_company/subset_X/instance_Y/
+  types_list_path: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/organization_company/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.broadcast:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.broadcast:
+    batch_size: 5
+  incremental_train.news:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.news:
+    batch_size: 5
+  test:
+    batch_size: 64

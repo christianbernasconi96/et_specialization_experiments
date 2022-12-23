@@ -24,7 +24,7 @@ dataset_paths:
   incremental_dev.weapon: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_40/instance_2/sons_of_product/incremental_dev_weapon.json
   test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
 rw_options:
-  modality: CreateAndSave
+  modality: Load
   light: true
   dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/product/subset_40/instance_2/
   types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/product/types_list.txt

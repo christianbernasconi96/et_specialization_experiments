@@ -10,7 +10,7 @@ dataset_paths:
   incremental_dev.mountain: /home/remote_hdd/datasets_for_incremental_training/figer/complete_subset_20/instance_1/sons_of_geography/incremental_dev_mountain.json
   test: /home/remote_hdd/datasets_for_incremental_training/figer/test.json
 rw_options:
-  modality: CreateAndSave
+  modality: Load
   light: true
   dirpath: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/geography/subset_20/instance_1/
   types_list_path: /home/remote_hdd/tokenized_datasets/figer/specialization/incremental/geography/types_list.txt

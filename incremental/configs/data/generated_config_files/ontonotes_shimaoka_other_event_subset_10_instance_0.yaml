@@ -1,0 +1,63 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_test.json
+  incremental_train.election: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_10/instance_0/sons_of_other_event/incremental_train_election.json
+  incremental_dev.election: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_10/instance_0/sons_of_other_event/incremental_dev_election.json
+  incremental_train.holiday: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_10/instance_0/sons_of_other_event/incremental_train_holiday.json
+  incremental_dev.holiday: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_10/instance_0/sons_of_other_event/incremental_dev_holiday.json
+  incremental_train.natural_disaster: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_10/instance_0/sons_of_other_event/incremental_train_natural_disaster.json
+  incremental_dev.natural_disaster: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_10/instance_0/sons_of_other_event/incremental_dev_natural_disaster.json
+  incremental_train.protest: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_10/instance_0/sons_of_other_event/incremental_train_protest.json
+  incremental_dev.protest: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_10/instance_0/sons_of_other_event/incremental_dev_protest.json
+  incremental_train.sports_event: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_10/instance_0/sons_of_other_event/incremental_train_sports_event.json
+  incremental_dev.sports_event: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_10/instance_0/sons_of_other_event/incremental_dev_sports_event.json
+  incremental_train.violent_conflict: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_10/instance_0/sons_of_other_event/incremental_train_violent_conflict.json
+  incremental_dev.violent_conflict: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_10/instance_0/sons_of_other_event/incremental_dev_violent_conflict.json
+  test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/test.json
+rw_options:
+  modality: CreateAndSave
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/other_event/subset_10/instance_0/
+  types_list_path: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/other_event/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.election:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.election:
+    batch_size: 5
+  incremental_train.holiday:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.holiday:
+    batch_size: 5
+  incremental_train.natural_disaster:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.natural_disaster:
+    batch_size: 5
+  incremental_train.protest:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.protest:
+    batch_size: 5
+  incremental_train.sports_event:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.sports_event:
+    batch_size: 5
+  incremental_train.violent_conflict:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.violent_conflict:
+    batch_size: 5
+  test:
+    batch_size: 64
