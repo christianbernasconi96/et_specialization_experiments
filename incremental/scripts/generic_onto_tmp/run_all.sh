@@ -29,6 +29,6 @@ bash incremental/scripts/generic_onto_tmp/run_all_box.sh -D $DATA -f $FAMILY
 # VERTICAL
 bash incremental/scripts/generic_onto_tmp/run_all_kenn_vertical.sh -D $DATA -f $FAMILY
 # HORIZONTAL
-bash incremental/scripts/generic_onto_tmp/run_all_kenn_horizontal.sh -D $DATA -f $FAMILY
+# bash incremental/scripts/generic_onto_tmp/run_all_kenn_horizontal.sh -D $DATA -f $FAMILY
 # HORIZONTAL VERTICAL
 # bash incremental/scripts/generic_onto_tmp/run_all_kenn_horizontal_vertical.sh -D $DATA -f $FAMILY

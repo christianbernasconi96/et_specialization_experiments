@@ -129,7 +129,7 @@ for data in DATA:
           # TODO: valutare altri metric managers... per me non servono
 
           # predict
-          network_output_for_inference, y_true = forward_incremental(model, attention_mask, input_ids, one_hot_types, MAIN_MODULE[projector].get_output_for_inference)
+          network_output_for_inference, y_true = forward_incremental(model, input_ids, attention_mask, one_hot_types, MAIN_MODULE[projector].get_output_for_inference)
           y_true = y_true.cuda()
           # infer types
           # network_output_for_inference = MAIN_MODULE[projector].get_output_for_inference(self=None, network_output=network_output)

@@ -1,0 +1,124 @@
+
+####### Data ontonotes_shimaoka ######
+
+### FAMILY location/geography ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_location_geography_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_location_geography_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_location_geography_subset40
+
+### FAMILY location/structure ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_location_structure_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_location_structure_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_location_structure_subset40
+
+### FAMILY location/transit ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_location_transit_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_location_transit_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_location_transit_subset40
+
+### FAMILY organization/company ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_organization_company_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_organization_company_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_organization_company_subset40
+
+### FAMILY other/art ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_art_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_art_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_art_subset40
+
+### FAMILY other/event ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_event_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_event_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_event_subset40
+
+### FAMILY other/health ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_health_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_health_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_health_subset40
+
+### FAMILY other/language ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_language_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_language_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_language_subset40
+
+### FAMILY other/living_thing ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_living_thing_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_living_thing_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_living_thing_subset40
+
+### FAMILY other/product ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_product_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_product_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_other_product_subset40
+
+### FAMILY person/artist ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_person_artist_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_person_artist_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/ontonotes_shimaoka_specialization_incremental_person_artist_subset40
+{"DATA": "list", "FAMILY": "dict", "LOG_FILE_PATH": "str", "N_INSTANCES": "int", "OUT_DIR_PATH": "str", "OUT_DIR_PATH_FAMILY": "str", "OUT_FILE": "str", "OUT_FILE_DATA": "str", "OUT_FILE_DATA_AGGREGATED": "str", "OUT_FILE_PROJECT_AGGREGATED": "str", "SUBSET": "list", "WANDB_ENTITY": "str", "WANDB_PROJECT": "str", "cols": "list", "cols_mean": "list", "cols_metrics": "list", "config": "dict", "data": "str", "df_data": "DataFrame", "df_data_aggregated": "DataFrame", "df_project": "DataFrame", "df_project_aggregated": "DataFrame", "df_project_mean": "DataFrame", "df_project_std": "DataFrame", "df_row": "Series", "family": "str", "get_ipython": "function", "i": "int", "instance": "str", "json": "module", "key_ok": "function", "metric_base_key": "str", "metric_base_keys": "set", "metrics": "dict", "name": "str", "non_metrics_cols": "list", "os": "module", "out_dir_data_path": "str", "out_dir_path_family": "str", "out_file": "str", "out_file_path": "str", "out_file_path_project_aggregated": "str", "out_file_project_aggregated": "str", "pd": "module", "projector": "str", "row": "dict", "run": "Run", "run_id": "str", "runs": "Runs", "subset": "int", "summary": "HTTPSummary", "sys": "module", "wandb": "module", "wandb_api": "Api", "wandb_path": "str", "wandb_project": "str", "warnings": "module"}

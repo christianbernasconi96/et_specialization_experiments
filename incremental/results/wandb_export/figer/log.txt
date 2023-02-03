@@ -1,0 +1,244 @@
+
+####### Data figer ######
+
+### FAMILY art ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_art_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_art_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_art_subset40
+
+### FAMILY broadcast ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_broadcast_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_broadcast_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_broadcast_subset40
+
+### FAMILY building ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_building_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_building_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_building_subset40
+
+### FAMILY computer ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_computer_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_computer_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_computer_subset40
+
+### FAMILY education ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_education_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_education_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_education_subset40
+
+### FAMILY event ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_event_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_event_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_event_subset40
+
+### FAMILY finance ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_finance_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_finance_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_finance_subset40
+
+### FAMILY geography ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_geography_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_geography_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_geography_subset40
+
+### FAMILY government ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_government_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_government_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_government_subset40
+
+### FAMILY internet ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_internet_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_internet_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_internet_subset40
+
+### FAMILY living_thing ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_living_thing_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_living_thing_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_living_thing_subset40
+
+### FAMILY location ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_location_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_location_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_location_subset40
+
+### FAMILY medicine ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_medicine_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_medicine_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_medicine_subset40
+
+### FAMILY metropolitan_transit ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_metropolitan_transit_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_metropolitan_transit_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_metropolitan_transit_subset40
+
+### FAMILY organization ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_organization_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_organization_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_organization_subset40
+
+### FAMILY people ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_people_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_people_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_people_subset40
+
+### FAMILY person ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_person_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_person_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_person_subset40
+
+### FAMILY product ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_product_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_product_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_product_subset40
+
+### FAMILY rail ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_rail_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_rail_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_rail_subset40
+
+### FAMILY religion ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_religion_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_religion_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_religion_subset40
+
+### FAMILY transportation ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_transportation_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_transportation_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_transportation_subset40
+
+### FAMILY visual_art ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_visual_art_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_visual_art_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/figer_specialization_incremental_visual_art_subset40

@@ -13,11 +13,8 @@ done
 # run with Load
 for i in $(seq 0 2)
 do
-  for k in 10 20 40
+  for e in 'bottom_up' 'top_down' 'hybrid'
   do
-    for e in 'bottom_up' 'top_down' 'hybrid'
-    do
-      bash incremental/scripts/generic_onto_tmp/train_kenn_adapter_bert_ms.sh -s 0 -i $i -k $k -e $e -D $DATA -f $FAMILY
-    done
+    bash incremental/scripts/generic_onto_tmp/train_kenn_adapter_bert_ms.sh -s 0 -i $i -k 40 -e $e -D $DATA -f $FAMILY
   done
 done

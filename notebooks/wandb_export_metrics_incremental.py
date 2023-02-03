@@ -13,8 +13,7 @@ WANDB_PROJECT = '{data}_specialization_incremental_{family}_subset{subset}'
 
 N_INSTANCES = 3
 
-DATA=['figer', 'bbn']
-DATA=['bbn']
+DATA=['figer', 'bbn', 'ontonotes_shimaoka']
 FAMILY = {
   'bbn' : [
           'CONTACT_INFO',
@@ -47,7 +46,20 @@ FAMILY = {
             'rail',
             'religion',
             'transportation',
-            'visual_art']
+            'visual_art'],
+  'ontonotes_shimaoka': [
+          'location/geography',
+          'location/structure',
+          'location/transit',
+          'organization/company',
+          'other/art',
+          'other/event',
+          'other/health',
+          'other/language',
+          'other/living_thing',
+          'other/product',
+          'person/artist'
+  ]
 }
 
 SUBSET = [10, 20, 40]
@@ -55,7 +67,7 @@ SUBSET = [10, 20, 40]
 # set paths
 OUT_DIR_PATH = '../incremental/results/wandb_export/{data}/'
 OUT_DIR_PATH_FAMILY = OUT_DIR_PATH + '{family}'
-LOG_FILE_PATH = '../incremental/results/wandb_export/log.txt'
+LOG_FILE_PATH = os.path.join('{}', 'log.txt')
 OUT_FILE = 'metrics_subset{subset}.csv'
 OUT_FILE_PROJECT_AGGREGATED = 'metrics_subset{subset}_aggregated.csv'
 OUT_FILE_DATA = 'metrics.csv'
@@ -66,9 +78,11 @@ def key_ok(key):
   return key.startswith('test') or key == 'epoch' or 'threshold' in key
 
 # %%
-sys.stdout = open(LOG_FILE_PATH,'wt')
 
 for data in DATA:
+  out_dir_data_path = OUT_DIR_PATH.format(data=data)
+  os.makedirs(out_dir_data_path, exist_ok=True)
+  sys.stdout = open(LOG_FILE_PATH.format(out_dir_data_path),'wt')
   print()
   print('####### Data', data,'######')
   # save metrics for each run
@@ -77,21 +91,20 @@ for data in DATA:
   df_data_aggregated = pd.DataFrame(columns=['metric', 'projector', 'family','subset',
                                   'precision/mean', 'recall/mean', 'f1/mean',
                                   'precision/std', 'recall/std', 'f1/std'])
-  out_dir_data_path = OUT_DIR_PATH.format(data=data)
-  os.makedirs(out_dir_data_path, exist_ok=True)
+  
 
   for family in FAMILY[data]:
     print()
     print('### FAMILY', family, '###')
     # prepare out dir
-    out_dir_path_family = OUT_DIR_PATH_FAMILY.format(data=data, family=family)
+    out_dir_path_family = OUT_DIR_PATH_FAMILY.format(data=data, family=family.replace('/','_'))
     os.makedirs(out_dir_path_family, exist_ok=True)
 
     for subset in SUBSET:
       print()
       print('# SUBSET', subset, '#')
       # get runs from wandb
-      wandb_project = WANDB_PROJECT.format(data=data, family=family, subset=subset)
+      wandb_project = WANDB_PROJECT.format(data=data, family=family.replace('/','_'), subset=subset)
       wandb_path = f'{WANDB_ENTITY}/{wandb_project}'
       print('Processing runs from', wandb_path)
       runs = wandb_api.runs(wandb_path)
@@ -200,27 +213,5 @@ for data in DATA:
   # save global dfs
   df_data.to_csv(f'{out_dir_data_path}/{OUT_FILE_DATA}', index=False)
   df_data_aggregated.to_csv(f'{out_dir_data_path}/{OUT_FILE_DATA_AGGREGATED}', index=False)
-# %%
-# cols = list(df_project_aggregated.columns)
-# non_metrics_cols = ['threshold_incremental/mean', 'threshold_incremental/std',
-#                     'threshold_pretraining/mean', 'threshold_incremental/std',
-#                     'epoch/mean', 'epoch/std']
-# cols_mean = [c for c in cols if c.endswith('/mean') and c not in non_metrics_cols]
-# for projector in df_project_aggregated.index:
-#   metric_base_keys = set([c.replace('/precision/mean', '').replace('/recall/mean', '').replace('/f1/mean', '') for c in cols_mean])
-#   for metric_base_key in metric_base_keys:
-#     row = {
-#       'projector': projector,
-#       'metric': metric_base_key,
-#       'family': family,
-#       'subset': subset,
-#       'precision/mean': df_project_aggregated.loc[projector, f'{metric_base_key}/precision/mean'],
-#       'recall/mean': df_project_aggregated.loc[projector, f'{metric_base_key}/recall/mean'],
-#       'f1/mean': df_project_aggregated.loc[projector, f'{metric_base_key}/f1/mean'],
-#       'precision/std': df_project_aggregated.loc[projector, f'{metric_base_key}/precision/std'],
-#       'recall/std': df_project_aggregated.loc[projector, f'{metric_base_key}/recall/std'],
-#       'f1/std': df_project_aggregated.loc[projector, f'{metric_base_key}/f1/std']
-#     }
 
-#     df_data = df_data.append(row, ignore_index=True)
 # %%

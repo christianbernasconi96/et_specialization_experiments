@@ -1,0 +1,28 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_test.json
+  incremental_train.road: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_40/instance_2/sons_of_location_transit/incremental_train_road.json
+  incremental_dev.road: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_40/instance_2/sons_of_location_transit/incremental_dev_road.json
+  test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/test.json
+rw_options:
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/location_transit/subset_40/instance_2/
+  types_list_path: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/location_transit/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.road:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.road:
+    batch_size: 5
+  test:
+    batch_size: 64

@@ -28,5 +28,5 @@ ET_Network_params:
           activation: none
 inference_params: 
   name: IncrementalDoubleThresholdOrMaxInference
-  threshold_pretraining: 0.375
+  threshold_pretraining: 0.33
   threshold_incremental: auto

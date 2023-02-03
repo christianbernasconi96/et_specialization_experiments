@@ -6,7 +6,7 @@ dataset_paths:
   incremental_dev.road: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_location_transit/incremental_dev_road.json
   test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/test.json
 rw_options:
-  modality: CreateAndSave
+  modality: Load
   light: true
   dirpath: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/location_transit/subset_X/instance_Y/
   types_list_path: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/location_transit/types_list.txt

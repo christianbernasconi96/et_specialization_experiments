@@ -14,8 +14,5 @@ done
 for i in $(seq 0 2)
 do
   # run CreateAndSave 
-  for k in 10 20 40
-  do
-    bash incremental/scripts/generic_onto_tmp/train_classifier_adapter_bert_ms.sh -s 0 -i $i -k $k -D $DATA -f $FAMILY
-  done
+  bash incremental/scripts/generic_onto_tmp/train_classifier_adapter_bert_ms.sh -s 0 -i $i -k 40 -D $DATA -f $FAMILY
 done

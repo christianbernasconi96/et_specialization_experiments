@@ -1,0 +1,63 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_test.json
+  incremental_train.airport: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_1/sons_of_location_structure/incremental_train_airport.json
+  incremental_dev.airport: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_1/sons_of_location_structure/incremental_dev_airport.json
+  incremental_train.government: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_1/sons_of_location_structure/incremental_train_government.json
+  incremental_dev.government: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_1/sons_of_location_structure/incremental_dev_government.json
+  incremental_train.hospital: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_1/sons_of_location_structure/incremental_train_hospital.json
+  incremental_dev.hospital: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_1/sons_of_location_structure/incremental_dev_hospital.json
+  incremental_train.restaurant: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_1/sons_of_location_structure/incremental_train_restaurant.json
+  incremental_dev.restaurant: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_1/sons_of_location_structure/incremental_dev_restaurant.json
+  incremental_train.sports_facility: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_1/sons_of_location_structure/incremental_train_sports_facility.json
+  incremental_dev.sports_facility: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_1/sons_of_location_structure/incremental_dev_sports_facility.json
+  incremental_train.theater: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_1/sons_of_location_structure/incremental_train_theater.json
+  incremental_dev.theater: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_1/sons_of_location_structure/incremental_dev_theater.json
+  test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/test.json
+rw_options:
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/location_structure/subset_20/instance_1/
+  types_list_path: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/location_structure/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.airport:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.airport:
+    batch_size: 5
+  incremental_train.government:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.government:
+    batch_size: 5
+  incremental_train.hospital:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.hospital:
+    batch_size: 5
+  incremental_train.restaurant:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.restaurant:
+    batch_size: 5
+  incremental_train.sports_facility:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.sports_facility:
+    batch_size: 5
+  incremental_train.theater:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.theater:
+    batch_size: 5
+  test:
+    batch_size: 64

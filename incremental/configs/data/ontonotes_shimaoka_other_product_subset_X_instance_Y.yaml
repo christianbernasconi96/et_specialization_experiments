@@ -12,7 +12,7 @@ dataset_paths:
   incremental_dev.weapon: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_product/incremental_dev_weapon.json
   test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/test.json
 rw_options:
-  modality: CreateAndSave
+  modality: Load
   light: true
   dirpath: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/other_product/subset_X/instance_Y/
   types_list_path: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/other_product/types_list.txt

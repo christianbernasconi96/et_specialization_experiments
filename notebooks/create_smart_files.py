@@ -256,5 +256,7 @@ for family in FAMILY[DATA]:
     dst_kb_dir = DST_KB_DIR.format(family)
     with open(os.path.join(dst_kb_dir, filename), 'w') as out:
         out.write(kb)
+
+
 # %%
 

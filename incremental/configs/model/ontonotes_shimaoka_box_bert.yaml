@@ -27,5 +27,5 @@ ET_Network_params:
         gumbel_beta: 0.00036026463511690845
 inference_params: 
     name: IncrementalDoubleThresholdOrMaxInference
-    threshold_pretraining: 0.375
+    threshold_pretraining: 0.26
     threshold_incremental: auto

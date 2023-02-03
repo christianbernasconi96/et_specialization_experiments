@@ -1,0 +1,56 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_test.json
+  incremental_train.broadcast: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_40/instance_1/sons_of_other_art/incremental_train_broadcast.json
+  incremental_dev.broadcast: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_40/instance_1/sons_of_other_art/incremental_dev_broadcast.json
+  incremental_train.film: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_40/instance_1/sons_of_other_art/incremental_train_film.json
+  incremental_dev.film: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_40/instance_1/sons_of_other_art/incremental_dev_film.json
+  incremental_train.music: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_40/instance_1/sons_of_other_art/incremental_train_music.json
+  incremental_dev.music: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_40/instance_1/sons_of_other_art/incremental_dev_music.json
+  incremental_train.stage: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_40/instance_1/sons_of_other_art/incremental_train_stage.json
+  incremental_dev.stage: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_40/instance_1/sons_of_other_art/incremental_dev_stage.json
+  incremental_train.writing: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_40/instance_1/sons_of_other_art/incremental_train_writing.json
+  incremental_dev.writing: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_40/instance_1/sons_of_other_art/incremental_dev_writing.json
+  test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/test.json
+rw_options:
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/other_art/subset_40/instance_1/
+  types_list_path: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/other_art/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.broadcast:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.broadcast:
+    batch_size: 5
+  incremental_train.film:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.film:
+    batch_size: 5
+  incremental_train.music:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.music:
+    batch_size: 5
+  incremental_train.stage:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.stage:
+    batch_size: 5
+  incremental_train.writing:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.writing:
+    batch_size: 5
+  test:
+    batch_size: 64

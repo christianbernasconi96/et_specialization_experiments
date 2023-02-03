@@ -1,23 +1,5 @@
 #!/bin/bash
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f art
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f broadcast
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f building
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f computer
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f education
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f event
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f finance
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f geography
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f government
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f internet
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f living_thing
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f location
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f medicine
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f metropolitan_transit
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f organization
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f people
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f person
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f product
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f rail
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f religion
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f transportation
-bash incremental/scripts/generic/run_all_kenn_horizontal.sh -D figer -f visual_art
+bash incremental/scripts/generic/train_classifier_adapter_bert_ms.sh -s 0 -i 1 -k 10 -D figer -f event
+bash incremental/scripts/generic/train_classifier_adapter_bert_ms.sh -s 0 -i 0 -k 40 -D figer -f event
+bash incremental/scripts/generic/train_classifier_adapter_bert_ms.sh -s 0 -i 2 -k 40 -D figer -f event
+bash incremental/scripts/generic/run_all_tmp.sh -D figer -f religion -l

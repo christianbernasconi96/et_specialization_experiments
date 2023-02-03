@@ -1,0 +1,35 @@
+dataset_paths:
+  pretraining_train: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_train_nodev.json
+  pretraining_dev: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_dev.json
+  pretraining_test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete/pretraining_test.json
+  incremental_train.malady: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_2/sons_of_other_health/incremental_train_malady.json
+  incremental_dev.malady: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_2/sons_of_other_health/incremental_dev_malady.json
+  incremental_train.treatment: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_2/sons_of_other_health/incremental_train_treatment.json
+  incremental_dev.treatment: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_20/instance_2/sons_of_other_health/incremental_dev_treatment.json
+  test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/test.json
+rw_options:
+  modality: Load
+  light: true
+  dirpath: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/other_health/subset_20/instance_2/
+  types_list_path: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/other_health/types_list.txt
+dataloader_params:
+  name: torch.DataLoader
+  pretraining_train:
+    batch_size: 5
+    shuffle: true
+  pretraining_dev:
+    batch_size: 64
+  pretraining_test:
+    batch_size: 64
+  incremental_train.malady:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.malady:
+    batch_size: 5
+  incremental_train.treatment:
+    batch_size: 5
+    shuffle: true
+  incremental_dev.treatment:
+    batch_size: 5
+  test:
+    batch_size: 64

@@ -10,13 +10,11 @@ dataset_paths:
   incremental_dev.natural_disaster: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_event/incremental_dev_natural_disaster.json
   incremental_train.protest: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_event/incremental_train_protest.json
   incremental_dev.protest: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_event/incremental_dev_protest.json
-  incremental_train.sports_event: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_event/incremental_train_sports_event.json
-  incremental_dev.sports_event: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_event/incremental_dev_sports_event.json
   incremental_train.violent_conflict: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_event/incremental_train_violent_conflict.json
   incremental_dev.violent_conflict: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/complete_subset_X/instance_Y/sons_of_other_event/incremental_dev_violent_conflict.json
   test: /home/remote_hdd/datasets_for_incremental_training/ontonotes_shimaoka/test.json
 rw_options:
-  modality: CreateAndSave
+  modality: Load
   light: true
   dirpath: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/other_event/subset_X/instance_Y/
   types_list_path: /home/remote_hdd/tokenized_datasets/ontonotes_shimaoka/specialization/incremental/other_event/types_list.txt
@@ -48,11 +46,6 @@ dataloader_params:
     batch_size: 5
     shuffle: true
   incremental_dev.protest:
-    batch_size: 5
-  incremental_train.sports_event:
-    batch_size: 5
-    shuffle: true
-  incremental_dev.sports_event:
     batch_size: 5
   incremental_train.violent_conflict:
     batch_size: 5
