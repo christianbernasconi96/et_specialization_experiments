@@ -2,7 +2,8 @@
 
 while getopts "p:" opt; do
   case $opt in
-    p) PROJECTOR = $opt
+    p) PROJECTOR=$OPTARG
+    ;;
   esac
 done
 
