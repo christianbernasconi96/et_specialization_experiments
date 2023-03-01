@@ -48,5 +48,5 @@ $CMD incremental/trainers/trainer_box_bert.py fit \
 --model 'incremental/configs/model/'$DATA'_box_bert.yaml' \
 --model.checkpoint_to_load=/home/remote_hdd/trained_models/$DATA/specialization/pretraining/box_adapter_bert_ms.ckpt \
 --logger incremental/configs/logger.yaml \
---logger.project=$DATA'_specialization_incremental_'$FAMILY'_subset'$SUBSET \
+--logger.project=$DATA'_specialization_'$FAMILY'_subset'$SUBSET \
 --logger.name=box_adapter_bert_ms

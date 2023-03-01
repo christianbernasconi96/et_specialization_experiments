@@ -55,5 +55,5 @@ $CMD incremental/trainers/trainer_kenn_bert.py fit \
 --model $NEW_MODEL_CONFIG_PATH \
 --model.checkpoint_to_load=/home/remote_hdd/trained_models/$DATA/specialization/pretraining/'kenn_'$KB_ENCODING'_adapter_bert_ms.ckpt' \
 --logger incremental/configs/logger.yaml \
---logger.project=$DATA'_specialization_incremental_'$FAMILY'_subset'$SUBSET \
+--logger.project=$DATA'_specialization_'$FAMILY'_subset'$SUBSET \
 --logger.name='kenn_'$KB_ENCODING'_adapter_bert_ms'

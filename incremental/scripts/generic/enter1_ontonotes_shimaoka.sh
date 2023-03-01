@@ -11,7 +11,10 @@ bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D ontonotes_shimaoka -f 
 bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D ontonotes_shimaoka -f location_transit
 bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D ontonotes_shimaoka -f organization_company
 bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D ontonotes_shimaoka -f other_art
-bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D ontonotes_shimaoka -f other_event
+
+# NOTE: be careful, there sports_event is missing from subset_40
+# bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D ontonotes_shimaoka -f other_event
+
 bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D ontonotes_shimaoka -f other_health
 bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D ontonotes_shimaoka -f other_language
 bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D ontonotes_shimaoka -f other_living_thing
