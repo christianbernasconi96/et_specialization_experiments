@@ -1,7 +1,3 @@
-loss_module_params:
-  name : BCELossModule
-  loss_params :
-    name : BCEWithLogProbLoss
 ET_Network_params:
   name : IncrementalEntityTypingNetwork
   network_params:
@@ -13,7 +9,7 @@ ET_Network_params:
       name : OneHotTypeEncoder
       trainable: False
     input_projector_params:
-      name : BoxEmbeddingIncrementalProjector
+      name : BoxEmbeddingKENNProjectorForIncrementalTraining
       box_embeddings_dimension: 109
       projection_network_params:
         name: HighwayNetwork
@@ -25,9 +21,13 @@ ET_Network_params:
         box_offset: 0.5
         use_gumbel_baysian: True
         gumbel_beta: 0.00036026463511690845
+      # kenn params
+      learnable_clause_weight: True
+      clause_weight: 2.0
+      kb_mode: bottom_up
       # incremental initialization
-      copy_father_parameters: CopyFatherFlag
+      copy_father_parameters: True
 inference_params: 
     name: IncrementalDoubleThresholdOrMaxInference
-    threshold_pretraining: 0.175
+    threshold_pretraining: 0.25
     threshold_incremental: auto

@@ -25,6 +25,8 @@ ET_Network_params:
         box_offset: 0.5
         use_gumbel_baysian: True
         gumbel_beta: 0.00036026463511690845
+      # incremental initialization
+      copy_father_parameters: CopyFatherFlag
 inference_params: 
     name: IncrementalDoubleThresholdOrMaxInference
     threshold_pretraining: 0.25

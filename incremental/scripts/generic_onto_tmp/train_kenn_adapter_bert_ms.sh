@@ -41,7 +41,7 @@ $CMD incremental/trainers/trainer_kenn_bert.py fit \
 --data $NEW_DATA_CONFIG_PATH \
 --trainer incremental/configs/trainer_common.yaml \
 --trainer.callbacks=ModelCheckpoint \
---trainer.callbacks.dirpath=/home/remote_hdd/trained_models/$DATA/specialization/incremental/$FAMILY/subset_$SUBSET/instance_$INSTANCE \
+--trainer.callbacks.dirpath=/home/remote_hdd/delete_me/trained_models/$DATA/specialization/incremental/$FAMILY/subset_$SUBSET/instance_$INSTANCE \
 --trainer.callbacks.filename='kenn_'$KB_ENCODING'_adapter_bert_ms' \
 --trainer.callbacks.monitor=losses/val_loss \
 --trainer.callbacks.save_weights_only=True \

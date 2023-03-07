@@ -26,6 +26,8 @@ ET_Network_params:
           out_features : type_number
           use_dropout: False
           activation: sigmoid
+      # incremental initialization
+      copy_father_parameters: CopyFatherFlag
 inference_params: 
     name: IncrementalDoubleThresholdOrMaxInference
     threshold_pretraining: 0.375

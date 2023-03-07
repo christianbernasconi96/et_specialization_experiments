@@ -2,7 +2,9 @@
 
 CMD='python'
 SEED=0
-while getopts "ds:i:k:e:D:f:" opt; do
+COPY_FATHER='False'
+INIT_STRING='no_init_'
+while getopts "ds:i:k:e:D:f:c" opt; do
   case $opt in
     d) CMD='debugpy-run -p :5680'
     ;;
@@ -17,6 +19,8 @@ while getopts "ds:i:k:e:D:f:" opt; do
     e) KB_ENCODING=$OPTARG
     ;;
     f) FAMILY=$OPTARG
+    ;;
+    c) COPY_FATHER='True' INIT_STRING='smart_init_'
     ;;
   esac
 done
@@ -34,6 +38,7 @@ NEW_MODEL_CONFIG_PATH='incremental/configs/model/generated_config_files/'$DATA'_
 cp $MODEL_CONFIG_TEMPLATE $NEW_MODEL_CONFIG_PATH
 sed -i 's/KB-ENCODING/'$KB_ENCODING'/g' $NEW_MODEL_CONFIG_PATH
 sed -i 's/FAMILY/'$FAMILY'/g' $NEW_MODEL_CONFIG_PATH
+sed -i 's/CopyFatherFlag/'$COPY_FATHER'/g' $NEW_MODEL_CONFIG_PATH
 
 $CMD incremental/trainers/trainer_kenn_bert.py fit \
 --seed_everything=$SEED \
@@ -42,8 +47,8 @@ $CMD incremental/trainers/trainer_kenn_bert.py fit \
 --data $NEW_DATA_CONFIG_PATH \
 --trainer incremental/configs/trainer_common.yaml \
 --trainer.callbacks=ModelCheckpoint \
---trainer.callbacks.dirpath=/home/remote_hdd/trained_models/$DATA/specialization/incremental/$FAMILY/subset_$SUBSET/instance_$INSTANCE \
---trainer.callbacks.filename='kenn_horizontal_'$KB_ENCODING'_adapter_bert_ms' \
+--trainer.callbacks.dirpath=/home/remote_hdd/delete_me/trained_models/$DATA/specialization/incremental/$FAMILY/subset_$SUBSET/instance_$INSTANCE \
+--trainer.callbacks.filename=$INIT_STRING'kenn_horizontal_'$KB_ENCODING'_adapter_bert_ms' \
 --trainer.callbacks.monitor=losses/val_loss \
 --trainer.callbacks.save_weights_only=True \
 --trainer.callbacks=EarlyStopping \
@@ -57,4 +62,4 @@ $CMD incremental/trainers/trainer_kenn_bert.py fit \
 --model.checkpoint_to_load=/home/remote_hdd/trained_models/$DATA/specialization/pretraining/'kenn_'$KB_ENCODING'_adapter_bert_ms.ckpt' \
 --logger incremental/configs/logger.yaml \
 --logger.project=$DATA'_specialization_'$FAMILY'_subset'$SUBSET \
---logger.name='kenn_horizontal_'$KB_ENCODING'_adapter_bert_ms'
+--logger.name=$INIT_STRING'kenn_horizontal_'$KB_ENCODING'_adapter_bert_ms'

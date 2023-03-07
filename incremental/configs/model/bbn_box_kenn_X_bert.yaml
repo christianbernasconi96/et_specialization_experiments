@@ -25,6 +25,8 @@ ET_Network_params:
       learnable_clause_weight: True
       clause_weight: 2.0
       kb_mode: KB-encoding
+      # incremental initialization
+      copy_father_parameters: CopyFatherFlag
 inference_params: 
     name: IncrementalDoubleThresholdOrMaxInference
     threshold_pretraining: 0.175
