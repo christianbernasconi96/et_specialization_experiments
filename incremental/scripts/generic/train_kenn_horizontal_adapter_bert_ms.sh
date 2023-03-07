@@ -61,4 +61,4 @@ $CMD incremental/trainers/trainer_kenn_bert.py fit \
 --model.checkpoint_to_load=/home/remote_hdd/trained_models/$DATA/specialization/pretraining/'kenn_bottom_up_adapter_bert_ms.ckpt' \
 --logger incremental/configs/logger.yaml \
 --logger.project=$DATA'_specialization_'$FAMILY'_subset'$SUBSET \
---logger.name=$INIT_STRING'no_init_kenn_horizontal_adapter_bert_ms'
+--logger.name=$INIT_STRING'kenn_horizontal_adapter_bert_ms'
