@@ -24,7 +24,7 @@ ET_Network_params:
       # kenn params
       learnable_clause_weight: True
       clause_weight: 2.0
-      kb_mode: bottom_up
+      kb_mode: hybrid
       # incremental initialization
       copy_father_parameters: False
 inference_params: 

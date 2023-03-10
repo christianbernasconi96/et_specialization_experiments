@@ -26,7 +26,7 @@ ET_Network_params:
       clause_weight: 2.0
       kb_mode: top_down
       # incremental initialization
-      copy_father_parameters: True
+      copy_father_parameters: False
 inference_params: 
     name: IncrementalDoubleThresholdOrMaxInference
     threshold_pretraining: 0.25
