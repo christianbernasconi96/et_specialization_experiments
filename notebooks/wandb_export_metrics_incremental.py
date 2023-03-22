@@ -7,13 +7,18 @@ import json
 import warnings
 warnings.filterwarnings('ignore')
 
+
+REDIRECT_LOG = True
+
 wandb_api = wandb.Api()
 WANDB_ENTITY = 'insides-lab-unimib-wandb'
-WANDB_PROJECT = '{data}_specialization_incremental_{family}_subset{subset}'
+# WANDB_PROJECT = '{data}_specialization_incremental_{family}_subset{subset}'
+WANDB_PROJECT = '{data}_specialization_{family}_subset{subset}'
 
 N_INSTANCES = 3
 
 DATA=['figer', 'bbn', 'ontonotes_shimaoka']
+
 FAMILY = {
   'bbn' : [
           'CONTACT_INFO',
@@ -53,7 +58,7 @@ FAMILY = {
           'location/transit',
           'organization/company',
           'other/art',
-          'other/event',
+          # 'other/event',
           'other/health',
           'other/language',
           'other/living_thing',
@@ -82,12 +87,15 @@ def key_ok(key):
 for data in DATA:
   out_dir_data_path = OUT_DIR_PATH.format(data=data)
   os.makedirs(out_dir_data_path, exist_ok=True)
-  sys.stdout = open(LOG_FILE_PATH.format(out_dir_data_path),'wt')
+  
+  if REDIRECT_LOG:
+    sys.stdout = open(LOG_FILE_PATH.format(out_dir_data_path),'wt')
+  
   print()
   print('####### Data', data,'######')
   # save metrics for each run
   df_data = pd.DataFrame(columns=['metric', 'projector', 'instance', 'family','subset',
-                                  'precision', 'recall', 'f1'])
+                                  'precision', 'recall', 'f1', 'epoch'])
   df_data_aggregated = pd.DataFrame(columns=['metric', 'projector', 'family','subset',
                                   'precision/mean', 'recall/mean', 'f1/mean',
                                   'precision/std', 'recall/std', 'f1/std'])
@@ -132,7 +140,10 @@ for data in DATA:
           else:
             df_project = pd.DataFrame([row])
         else:
-          print('Empty run detected! Run details:')
+          if run.state != 'finished':
+            print(f'{run.state.title()} run detected! Run details:')
+          else:
+            print('Empty run detected! Run details:')
           print('- url:', f'https://wandb.ai/{wandb_path}/runs/{run_id}')
           print('- name:', name)
           print('- instance:', instance)
@@ -166,7 +177,8 @@ for data in DATA:
               'subset': subset,
               'precision': df_row[f'{metric_base_key}/precision'],
               'recall': df_row[f'{metric_base_key}/recall'],
-              'f1': df_row[f'{metric_base_key}/f1']
+              'f1': df_row[f'{metric_base_key}/f1'],
+              'epoch': df_row['epoch']
             }
 
             df_data = df_data.append(row, ignore_index=True)

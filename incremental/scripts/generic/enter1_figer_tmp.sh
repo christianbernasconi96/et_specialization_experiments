@@ -14,17 +14,14 @@ done
 # bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f art $COPY_FATHER
 # bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f broadcast $COPY_FATHER
 # bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f building $COPY_FATHER
-# bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f computer $COPY_FATHER
-
 # bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f education $COPY_FATHER
 # bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f event $COPY_FATHER
-
+bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f computer $COPY_FATHER
 bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f geography $COPY_FATHER
-bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f government $COPY_FATHER
-bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f living_thing $COPY_FATHER
-bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f location $COPY_FATHER
-bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f organization $COPY_FATHER
-
+# bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f government $COPY_FATHER
+# bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f living_thing $COPY_FATHER
+# bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f location $COPY_FATHER
+# bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f organization $COPY_FATHER
 # bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f finance $COPY_FATHER
 # bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f internet $COPY_FATHER
 # bash incremental/scripts/generic/run_all_$PROJECTOR.sh -D figer -f medicine $COPY_FATHER

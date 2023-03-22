@@ -1,0 +1,101 @@
+
+####### Data bbn ######
+
+### FAMILY CONTACT_INFO ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_CONTACT_INFO_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_CONTACT_INFO_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_CONTACT_INFO_subset40
+
+### FAMILY EVENT ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_EVENT_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_EVENT_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_EVENT_subset40
+
+### FAMILY FACILITY ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_FACILITY_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_FACILITY_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_FACILITY_subset40
+
+### FAMILY GPE ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_GPE_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_GPE_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_GPE_subset40
+
+### FAMILY LOCATION ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_LOCATION_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_LOCATION_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_LOCATION_subset40
+
+### FAMILY ORGANIZATION ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_ORGANIZATION_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_ORGANIZATION_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_ORGANIZATION_subset40
+
+### FAMILY PRODUCT ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_PRODUCT_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_PRODUCT_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_PRODUCT_subset40
+
+### FAMILY SUBSTANCE ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_SUBSTANCE_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_SUBSTANCE_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_SUBSTANCE_subset40
+
+### FAMILY WORK_OF_ART ###
+
+# SUBSET 10 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_WORK_OF_ART_subset10
+
+# SUBSET 20 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_WORK_OF_ART_subset20
+
+# SUBSET 40 #
+Processing runs from insides-lab-unimib-wandb/bbn_specialization_WORK_OF_ART_subset40

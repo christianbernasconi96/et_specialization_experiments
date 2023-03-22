@@ -1,14 +1,19 @@
 # %%
 import wandb
 import json 
+import os
+import sys
 
+REDIRECT_LOG = True
+
+# os.environ["WANDB_API_KEY"] = input('Insert wandb api key')
 wandb_api = wandb.Api()
 WANDB_ENTITY = 'insides-lab-unimib-wandb'
 WANDB_PROJECT = '{data}_specialization_{family}_subset{subset}'
-ACTION = 'RENAME' # ['DELETE', 'RENAME']
-PREFIX = 'box'
-NEW_PREFIX = 'smart_init_box'
-DATA=['figer', 'bbn']#, 'ontonotes_shimaoka']
+ACTION = 'CHECK_NAN' # ['DELETE', 'RENAME', 'CLEAN', 'CHECK_NAN]
+PREFIX = 'smart_init_box_ad'
+NEW_PREFIX = 'no_init_box'
+DATA = ['figer', 'bbn'] # ['figer', 'bbn', 'ontonotes_shimaoka']
 FAMILY = {
   'bbn' : [
           'CONTACT_INFO',
@@ -61,7 +66,10 @@ SUBSET = [10, 20, 40]
 
 # %%
 
+
 for data in DATA:
+  if REDIRECT_LOG:
+    sys.stdout = open(f'wandb_refactor_{data}_output.txt','wt')
   print()
   print('####### Data', data,'######')
 
@@ -73,32 +81,50 @@ for data in DATA:
       print()
       print('# SUBSET', subset, '#')
       # get runs from wandb
-      wandb_project = WANDB_PROJECT.format(data=data, family=family.replace('/','_'), subset=subset)
-      wandb_path = f'{WANDB_ENTITY}/{wandb_project}'
-      print('Processing runs from', wandb_path)
-      runs = wandb_api.runs(wandb_path)
-      
-      # iterate runs
-      for run in runs:
-        run_id = run.id
-        name = run.name
+      try:
+        wandb_project = WANDB_PROJECT.format(data=data, family=family.replace('/','_'), subset=subset)
+        wandb_path = f'{WANDB_ENTITY}/{wandb_project}'
+        print('Processing runs from', wandb_path)
+        runs = wandb_api.runs(wandb_path)
+        
+        # iterate runs
+        for run in runs:
+          run_id = run.id
+          name = run.name
 
-        if name.startswith(PREFIX):
-          if ACTION == 'DELETE':
-            print('Deleting run', name, ', id:', run_id)
-            # run.delete()
-          elif ACTION == 'RENAME':
-            print('Renaming run', name, ', id:', run_id)
-            new_name = name.replace(PREFIX, NEW_PREFIX)
-            print(name, '->', new_name)
-            run.name = new_name
-            run.update()
-        else:
-          config = json.loads(run.json_config)
-          # delete empty run
-          if not config:
-            print('Deleting empty run', name, ', id:', run_id)
-            # run.delete()
+          if ACTION == 'CLEAN':
+            config = json.loads(run.json_config)
+            # delete empty run
+            if not config or run.state.lower() != 'finished':
+              print('Deleting empty run', name, ', id:', run_id)
+              run.delete()
+          elif ACTION == 'CHECK_NAN':
+            if name.startswith(PREFIX):
+              run_files = run.files()
+              
+              for f in run_files:
+                if f.name == 'output.log':
+                  run_log = f
+                  break
+
+              log_txt = run_log.download(replace=True).read()
+              if 'Monitored metric losses/val_loss = nan is not finite' in log_txt or 'loss=nan' in log_txt:
+                  print('Nan loss detected:', name, ', id:', run_id)
+          else:
+            if name.startswith(PREFIX):
+              if ACTION == 'DELETE':
+                print('Deleting run', name, ', id:', run_id)
+                # run.delete()
+              elif ACTION == 'RENAME':
+                print('Renaming run', name, ', id:', run_id)
+                new_name = name.replace(PREFIX, NEW_PREFIX)
+                print(name, '->', new_name)
+                run.name = new_name
+                run.update()
+          
+      except:
+        print('Project not found:', wandb_project)
+          
 
 # # %%
 # # RENAME RUN
@@ -108,3 +134,20 @@ for data in DATA:
 # run.name = new_name
 # run.update()
 # %%
+
+# run = wandb_api.run(f'{WANDB_ENTITY}/{WANDB_PROJECT}/havgctl1'.format(data='figer', family='art', subset='10'))
+# run
+# %%
+# name = run.name
+# run_id = run.id
+# if name.startswith(PREFIX):
+#     run_files = run.files()
+    
+#     for f in run_files:
+#       if f.name == 'output.log':
+#         run_log = f
+#         break
+
+#     log_txt = run_log.download(replace=True).read()
+#     if 'Monitored metric losses/val_loss = nan is not finite' in log_txt or 'loss=nan' in log_txt:
+#       print('Nan loss detected:', name, ', id:', run_id)

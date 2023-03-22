@@ -1,0 +1,598 @@
+Some weights of the model checkpoint at bert-large-cased were not used when initializing BertModel: ['cls.seq_relationship.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+2 clauses created
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+  | Name       | Type                           | Params
+--------------------------------------------------------------
+0 | ET_Network | IncrementalEntityTypingNetwork | 345 M
+1 | loss       | BCEMultiLossModule             | 0
+--------------------------------------------------------------
+4.4 M     Trainable params
+341 M     Non-trainable params
+345 M     Total params
+1,382.395 Total estimated model params size (MB)
+/home/cbernasconi/et/venv/lib/python3.8/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:631: UserWarning: Checkpoint directory /home/remote_hdd/trained_models/bbn/specialization/incremental/WORK_OF_ART/subset_40/instance_0 exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+/home/cbernasconi/et/venv/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:116: UserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+/home/cbernasconi/et/venv/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:116: UserWarning: The dataloader, val_dataloader 1, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+/home/cbernasconi/et/venv/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:116: UserWarning: The dataloader, val_dataloader 2, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+
+Validation sanity check:  83%|███████████████████████████████████████████████████████████████████████████               | 5/6 [00:02<00:00,  2.03it/s]
+Global seed set to 0
+/home/cbernasconi/et/venv/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:412: UserWarning: The number of training samples (4) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+  rank_zero_warn(
+/home/cbernasconi/et/venv/lib/python3.8/site-packages/pytorch_lightning/loops/optimization/closure.py:35: LightningDeprecationWarning: One of the returned values {'pretraining_loss', 'incremental_loss'} has a `grad_fn`. We will detach it automatically but this behaviour will change in v1.6. Please detach it manually: `return {'loss': ..., 'something': something.detach()}`
+
+Epoch 0:  21%|█████████████████▌                                                                | 6/28 [00:03<00:13,  1.68it/s, loss=2.13, v_num=5512]
+
+
+
+
+Validating:  83%|████████████████████████████████████████████████████████████████████████████████████▏                | 20/24 [00:08<00:01,  2.36it/s]
+
+
+Epoch 1:  29%|███████████████████████▍                                                          | 8/28 [00:02<00:06,  3.30it/s, loss=2.02, v_num=5512]
+
+
+
+
+Validating:  92%|████████████████████████████████████████████████████████████████████████████████████████████▌        | 22/24 [00:09<00:00,  2.43it/s]
+
+Epoch 2:  14%|███████████▋                                                                      | 4/28 [00:00<00:04,  5.38it/s, loss=1.92, v_num=5512]
+
+
+
+
+
+Validating: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 24/24 [00:10<00:00,  2.31it/s]
+
+Epoch 3:  21%|█████████████████▌                                                                | 6/28 [00:00<00:03,  6.35it/s, loss=1.84, v_num=5512]
+
+
+
+
+Validating:  83%|████████████████████████████████████████████████████████████████████████████████████▏                | 20/24 [00:08<00:01,  2.11it/s]
+
+
+Epoch 4:  29%|███████████████████████▍                                                          | 8/28 [00:01<00:04,  4.62it/s, loss=1.76, v_num=5512]
+
+
+
+
+Validating:  92%|████████████████████████████████████████████████████████████████████████████████████████████▌        | 22/24 [00:09<00:00,  2.26it/s]
+
+Epoch 5:  21%|█████████████████▌                                                                | 6/28 [00:01<00:04,  5.29it/s, loss=1.58, v_num=5512]
+
+
+
+
+
+Validating: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 24/24 [00:10<00:00,  2.18it/s]
+
+Epoch 6:  29%|███████████████████████▍                                                          | 8/28 [00:02<00:05,  3.94it/s, loss=1.42, v_num=5512]
+
+
+
+
+Validating:  83%|████████████████████████████████████████████████████████████████████████████████████▏                | 20/24 [00:08<00:01,  2.12it/s]
+
+
+Epoch 7:  36%|████████████████████████████▉                                                    | 10/28 [00:02<00:04,  4.03it/s, loss=1.25, v_num=5512]
+
+
+
+
+Validating:  92%|████████████████████████████████████████████████████████████████████████████████████████████▌        | 22/24 [00:09<00:00,  2.44it/s]
+
+Epoch 8:  21%|█████████████████▌                                                                | 6/28 [00:01<00:05,  4.27it/s, loss=1.07, v_num=5512]
+
+
+
+
+
+
+Validating:  96%|████████████████████████████████████████████████████████████████████████████████████████████████▊    | 23/24 [00:12<00:00,  2.49it/s]
+
+
+
+Epoch 9:  21%|█████████████████▎                                                               | 6/28 [00:05<00:21,  1.02it/s, loss=0.912, v_num=5512]
+
+
+
+
+
+Validating:  79%|███████████████████████████████████████████████████████████████████████████████▉                     | 19/24 [00:08<00:01,  2.50it/s]
+
+Epoch 10:  14%|███████████▍                                                                    | 4/28 [00:02<00:13,  1.75it/s, loss=0.764, v_num=5512]
+
+
+
+
+
+
+Validating:  96%|████████████████████████████████████████████████████████████████████████████████████████████████▊    | 23/24 [00:12<00:00,  2.29it/s]
+
+Epoch 11:  21%|█████████████████▏                                                              | 6/28 [00:00<00:03,  6.10it/s, loss=0.628, v_num=5512]
+
+
+
+
+
+Validating:  96%|████████████████████████████████████████████████████████████████████████████████████████████████▊    | 23/24 [00:10<00:00,  2.32it/s]
+
+Epoch 12:  29%|██████████████████████▊                                                         | 8/28 [00:01<00:04,  4.90it/s, loss=0.521, v_num=5512]
+
+
+
+
+Validating:  83%|████████████████████████████████████████████████████████████████████████████████████▏                | 20/24 [00:08<00:01,  2.44it/s]
+
+Epoch 13:  14%|███████████▍                                                                    | 4/28 [00:00<00:05,  4.45it/s, loss=0.455, v_num=5512]
+
+
+
+
+
+Validating:  79%|███████████████████████████████████████████████████████████████████████████████▉                     | 19/24 [00:08<00:02,  2.29it/s]
+
+Epoch 14:  21%|█████████████████▏                                                              | 6/28 [00:01<00:06,  3.61it/s, loss=0.403, v_num=5512]
+
+
+
+
+
+Validating:  79%|███████████████████████████████████████████████████████████████████████████████▉                     | 19/24 [00:08<00:02,  2.10it/s]
+
+Epoch 15:  36%|████████████████████████████▌                                                   | 10/28 [00:02<00:03,  4.63it/s, loss=0.36, v_num=5512]
+
+
+
+
+Validating:  88%|████████████████████████████████████████████████████████████████████████████████████████▍            | 21/24 [00:09<00:01,  2.24it/s]
+
+Epoch 16:  14%|███████████▍                                                                    | 4/28 [00:01<00:06,  3.57it/s, loss=0.339, v_num=5512]
+
+
+
+
+
+Validating:  96%|████████████████████████████████████████████████████████████████████████████████████████████████▊    | 23/24 [00:09<00:00,  2.54it/s]
+
+Epoch 17:  29%|███████████████████████▏                                                         | 8/28 [00:01<00:04,  4.14it/s, loss=0.32, v_num=5512]
+
+
+
+
+
+
+Epoch 18:  36%|████████████████████████████▏                                                  | 10/28 [00:04<00:07,  2.32it/s, loss=0.296, v_num=5512]
+
+
+
+
+
+Epoch 19:  21%|█████████████████▏                                                              | 6/28 [00:03<00:13,  1.60it/s, loss=0.277, v_num=5512]
+
+
+
+
+
+
+Epoch 20:  29%|██████████████████████▊                                                         | 8/28 [00:04<00:10,  1.91it/s, loss=0.266, v_num=5512]
+
+
+
+
+Validating:  96%|████████████████████████████████████████████████████████████████████████████████████████████████▊    | 23/24 [00:09<00:00,  2.31it/s]
+
+Epoch 21:  14%|███████████▍                                                                    | 4/28 [00:01<00:08,  2.95it/s, loss=0.256, v_num=5512]
+
+
+
+
+
+
+Epoch 22:  29%|███████████████████████▏                                                         | 8/28 [00:03<00:09,  2.05it/s, loss=0.25, v_num=5512]
+
+
+
+
+
+
+Epoch 23:  36%|████████████████████████████▏                                                  | 10/28 [00:04<00:08,  2.09it/s, loss=0.241, v_num=5512]
+
+
+
+
+
+Epoch 24:  14%|███████████▍                                                                    | 4/28 [00:02<00:17,  1.35it/s, loss=0.236, v_num=5512]
+
+
+
+
+Validating:  83%|████████████████████████████████████████████████████████████████████████████████████▏                | 20/24 [00:07<00:01,  2.57it/s]
+
+
+Epoch 25:  29%|██████████████████████▊                                                         | 8/28 [00:02<00:06,  2.97it/s, loss=0.231, v_num=5512]
+
+
+
+
+Validating:  88%|████████████████████████████████████████████████████████████████████████████████████████▍            | 21/24 [00:08<00:01,  2.28it/s]
+
+
+Epoch 26:  29%|██████████████████████▊                                                         | 8/28 [00:02<00:06,  3.08it/s, loss=0.222, v_num=5512]
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 28:  29%|██████████████████████▊                                                         | 8/28 [00:03<00:09,  2.08it/s, loss=0.225, v_num=5512]
+
+
+
+
+
+Epoch 29:  14%|███████████▍                                                                    | 4/28 [00:03<00:20,  1.19it/s, loss=0.224, v_num=5512]
+
+
+
+
+
+
+Epoch 30:  21%|█████████████████▏                                                              | 6/28 [00:03<00:13,  1.69it/s, loss=0.226, v_num=5512]
+
+
+
+
+Validating:  92%|████████████████████████████████████████████████████████████████████████████████████████████▌        | 22/24 [00:08<00:00,  2.40it/s]
+
+Monitored metric losses/val_loss did not improve in the last 5 records. Best score: 0.073. Signaling Trainer to stop.
+Some weights of the model checkpoint at bert-large-cased were not used when initializing BertModel: ['cls.seq_relationship.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+2 clauses created
+/home/cbernasconi/et/venv/lib/python3.8/site-packages/pytorch_lightning/utilities/parsing.py:104: UserWarning: attribute 'logger' removed from hparams because it cannot be pickled
+  rank_zero_warn(f"attribute '{k}' removed from hparams because it cannot be pickled")
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+
+
+
+Validating:  96%|████████████████████████████████████████████████████████████████████████████████████████████████▊    | 23/24 [00:08<00:00,  2.61it/s]
+DATALOADER:0 VALIDATE RESULTS█████████████████████████████████████████████████████████████████████████████████████████| 24/24 [00:08<00:00,  2.50it/s]
+{}
+--------------------------------------------------------------------------------
+DATALOADER:1 VALIDATE RESULTS
+{}
+--------------------------------------------------------------------------------
+DATALOADER:2 VALIDATE RESULTS
+{}
+--------------------------------------------------------------------------------
+Validating model with threshold set to 0.01
+incremental_only/macro_types/f1: 0.9189189076423645
+Value improved
+Validating model with threshold set to 0.02
+incremental_only/macro_types/f1: 0.904109537601471
+Value not improved
+Validating model with threshold set to 0.03
+incremental_only/macro_types/f1: 0.8888888359069824
+Value not improved
+Validating model with threshold set to 0.04
+incremental_only/macro_types/f1: 0.8888888359069824
+Value not improved
+Validating model with threshold set to 0.05
+incremental_only/macro_types/f1: 0.8732393980026245
+Value not improved
+Validating model with threshold set to 0.060000000000000005
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.06999999999999999
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.08
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.09
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.09999999999999999
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.11
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.12
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.13
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.14
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.15000000000000002
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.16
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.17
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.18000000000000002
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.19
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.2
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.21000000000000002
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.22
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.23
+incremental_only/macro_types/f1: 0.8571428656578064
+Value not improved
+Validating model with threshold set to 0.24000000000000002
+incremental_only/macro_types/f1: 0.8405797481536865
+Value not improved
+Validating model with threshold set to 0.25
+incremental_only/macro_types/f1: 0.8405797481536865
+Value not improved
+Validating model with threshold set to 0.26
+incremental_only/macro_types/f1: 0.8405797481536865
+Value not improved
+Validating model with threshold set to 0.27
+incremental_only/macro_types/f1: 0.8405797481536865
+Value not improved
+Validating model with threshold set to 0.28
+incremental_only/macro_types/f1: 0.8405797481536865
+Value not improved
+Validating model with threshold set to 0.29000000000000004
+incremental_only/macro_types/f1: 0.8405797481536865
+Value not improved
+Validating model with threshold set to 0.3
+incremental_only/macro_types/f1: 0.8405797481536865
+Value not improved
+Validating model with threshold set to 0.31
+incremental_only/macro_types/f1: 0.8405797481536865
+Value not improved
+Validating model with threshold set to 0.32
+incremental_only/macro_types/f1: 0.8405797481536865
+Value not improved
+Validating model with threshold set to 0.33
+incremental_only/macro_types/f1: 0.8405797481536865
+Value not improved
+Validating model with threshold set to 0.34
+incremental_only/macro_types/f1: 0.8405797481536865
+Value not improved
+Validating model with threshold set to 0.35000000000000003
+incremental_only/macro_types/f1: 0.8405797481536865
+Value not improved
+Validating model with threshold set to 0.36000000000000004
+incremental_only/macro_types/f1: 0.8235293626785278
+Value not improved
+Validating model with threshold set to 0.37
+incremental_only/macro_types/f1: 0.8235293626785278
+Value not improved
+Validating model with threshold set to 0.38
+incremental_only/macro_types/f1: 0.8059701323509216
+Value not improved
+Validating model with threshold set to 0.39
+incremental_only/macro_types/f1: 0.8059701323509216
+Value not improved
+
+Calibrating the threshold:  74%|███████████████████████████████████████████████████████████████▍                      | 73/99 [00:02<00:01, 24.00it/s]
+incremental_only/macro_types/f1: 0.8059701323509216
+Value not improved
+Validating model with threshold set to 0.41000000000000003
+incremental_only/macro_types/f1: 0.8059701323509216
+Value not improved
+Validating model with threshold set to 0.42000000000000004
+incremental_only/macro_types/f1: 0.8059701323509216
+Value not improved
+Validating model with threshold set to 0.43
+incremental_only/macro_types/f1: 0.7878787517547607
+Value not improved
+Validating model with threshold set to 0.44
+incremental_only/macro_types/f1: 0.7878787517547607
+Value not improved
+Validating model with threshold set to 0.45
+incremental_only/macro_types/f1: 0.7692307829856873
+Value not improved
+Validating model with threshold set to 0.46
+incremental_only/macro_types/f1: 0.75
+Value not improved
+Validating model with threshold set to 0.47000000000000003
+incremental_only/macro_types/f1: 0.75
+Value not improved
+Validating model with threshold set to 0.48000000000000004
+incremental_only/macro_types/f1: 0.7301586866378784
+Value not improved
+Validating model with threshold set to 0.49
+incremental_only/macro_types/f1: 0.7301586866378784
+Value not improved
+Validating model with threshold set to 0.5
+incremental_only/macro_types/f1: 0.7301586866378784
+Value not improved
+Validating model with threshold set to 0.51
+incremental_only/macro_types/f1: 0.7301586866378784
+Value not improved
+Validating model with threshold set to 0.52
+incremental_only/macro_types/f1: 0.7301586866378784
+Value not improved
+Validating model with threshold set to 0.53
+incremental_only/macro_types/f1: 0.6885245442390442
+Value not improved
+Validating model with threshold set to 0.54
+incremental_only/macro_types/f1: 0.6440677642822266
+Value not improved
+Validating model with threshold set to 0.55
+incremental_only/macro_types/f1: 0.6440677642822266
+Value not improved
+Validating model with threshold set to 0.56
+incremental_only/macro_types/f1: 0.6440677642822266
+Value not improved
+Validating model with threshold set to 0.5700000000000001
+incremental_only/macro_types/f1: 0.596491277217865
+Value not improved
+Validating model with threshold set to 0.5800000000000001
+incremental_only/macro_types/f1: 0.596491277217865
+Value not improved
+Validating model with threshold set to 0.59
+incremental_only/macro_types/f1: 0.5454545617103577
+Value not improved
+Validating model with threshold set to 0.6
+incremental_only/macro_types/f1: 0.49056604504585266
+Value not improved
+Validating model with threshold set to 0.61
+incremental_only/macro_types/f1: 0.46153849363327026
+Value not improved
+Validating model with threshold set to 0.62
+incremental_only/macro_types/f1: 0.4313725531101227
+Value not improved
+Validating model with threshold set to 0.63
+incremental_only/macro_types/f1: 0.36734694242477417
+Value not improved
+Validating model with threshold set to 0.64
+incremental_only/macro_types/f1: 0.3333333134651184
+Value not improved
+Validating model with threshold set to 0.65
+incremental_only/macro_types/f1: 0.3333333134651184
+Value not improved
+Validating model with threshold set to 0.66
+incremental_only/macro_types/f1: 0.3333333134651184
+Value not improved
+Validating model with threshold set to 0.67
+incremental_only/macro_types/f1: 0.3333333134651184
+Value not improved
+Validating model with threshold set to 0.68
+incremental_only/macro_types/f1: 0.3333333134651184
+Value not improved
+Validating model with threshold set to 0.6900000000000001
+incremental_only/macro_types/f1: 0.2978723645210266
+Value not improved
+Validating model with threshold set to 0.7000000000000001
+incremental_only/macro_types/f1: 0.2978723645210266
+Value not improved
+Validating model with threshold set to 0.7100000000000001
+incremental_only/macro_types/f1: 0.2978723645210266
+Value not improved
+Validating model with threshold set to 0.72
+incremental_only/macro_types/f1: 0.20000000298023224
+Value not improved
+Validating model with threshold set to 0.73
+incremental_only/macro_types/f1: 0.20000000298023224
+Value not improved
+Validating model with threshold set to 0.74
+incremental_only/macro_types/f1: 0.20000000298023224
+Value not improved
+Validating model with threshold set to 0.75
+incremental_only/macro_types/f1: 0.1304347962141037
+Value not improved
+Validating model with threshold set to 0.76
+incremental_only/macro_types/f1: 0.09090909361839294
+Value not improved
+Validating model with threshold set to 0.77
+incremental_only/macro_types/f1: 0.09090909361839294
+Value not improved
+Validating model with threshold set to 0.78
+incremental_only/macro_types/f1: 0.09090909361839294
+Value not improved
+Validating model with threshold set to 0.79
+incremental_only/macro_types/f1: 0.09090909361839294
+Value not improved
+Validating model with threshold set to 0.8
+incremental_only/macro_types/f1: 0.0476190522313118
+Value not improved
+Validating model with threshold set to 0.81
+incremental_only/macro_types/f1: 0.0476190522313118
+Value not improved
+Validating model with threshold set to 0.8200000000000001
+incremental_only/macro_types/f1: 0.0476190522313118
+Value not improved
+Validating model with threshold set to 0.8300000000000001
+incremental_only/macro_types/f1: 0.0476190522313118
+Value not improved
+Validating model with threshold set to 0.8400000000000001
+incremental_only/macro_types/f1: 0.0476190522313118
+Value not improved
+Validating model with threshold set to 0.85
+incremental_only/macro_types/f1: 0.0476190522313118
+Value not improved
+Validating model with threshold set to 0.86
+incremental_only/macro_types/f1: 0.0476190522313118
+Value not improved
+Validating model with threshold set to 0.87
+incremental_only/macro_types/f1: nan
+Value not improved
+Validating model with threshold set to 0.88
+incremental_only/macro_types/f1: nan
+Value not improved
+Calibrating the threshold: 100%|██████████████████████████████████████████████████████████████████████████████████████| 99/99 [00:03<00:00, 25.81it/s]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/home/cbernasconi/et/venv/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:116: UserWarning: The dataloader, test_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+incremental_only/macro_types/f1: nan
+Value not improved
+Validating model with threshold set to 0.9
+incremental_only/macro_types/f1: nan
+Value not improved
+Validating model with threshold set to 0.91
+incremental_only/macro_types/f1: nan
+Value not improved
+Validating model with threshold set to 0.92
+incremental_only/macro_types/f1: nan
+Value not improved
+Validating model with threshold set to 0.93
+incremental_only/macro_types/f1: nan
+Value not improved
+Validating model with threshold set to 0.9400000000000001
+incremental_only/macro_types/f1: nan
+Value not improved
+Validating model with threshold set to 0.9500000000000001
+incremental_only/macro_types/f1: nan
+Value not improved
+Validating model with threshold set to 0.9600000000000001
+incremental_only/macro_types/f1: nan
+Value not improved
+Validating model with threshold set to 0.97
+incremental_only/macro_types/f1: nan
+Value not improved
+Validating model with threshold set to 0.98
+incremental_only/macro_types/f1: nan
+Value not improved
+Validating model with threshold set to 0.99
+incremental_only/macro_types/f1: nan
+Value not improved
+********************
+Optimal threshold 0.01
+********************
+
+
+
+
+Testing: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████| 17/17 [00:11<00:00,  1.50it/s]--------------------------------------------------------------------------------
+DATALOADER:0 TEST RESULTS
+{}
+--------------------------------------------------------------------------------
+Testing: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████| 17/17 [00:11<00:00,  1.54it/s]

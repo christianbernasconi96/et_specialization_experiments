@@ -27,7 +27,7 @@ ET_Network_params:
           use_dropout: False
           activation: none
       # incremental initialization
-      copy_father_parameters: False
+      copy_father_parameters: True
 inference_params: 
   name: IncrementalDoubleThresholdOrMaxInference
   threshold_pretraining: 0.375
